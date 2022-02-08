@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -14,7 +15,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        return view('backend.pages.categories.index');
+        $categories = Category::all();
+        return view('backend.pages.categories.index',compact('categories'));
     }
 
     /**
@@ -24,7 +26,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('backend.pages.categories.create');
     }
 
     /**
@@ -35,7 +37,19 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->validate([
+            'title' => 'required',
+            'slug' => 'required',
+        ]);
+
+        $category = new Category();
+
+        $category->title = $data['title'];
+        $category->slug = $data['slug'];
+
+        if ($category->save()) {
+            return redirect('admin/categories');
+        }
     }
 
     /**
