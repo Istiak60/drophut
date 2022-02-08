@@ -34,16 +34,16 @@
                         
                         <div class="middel_right_info">
                             <div class="header_wishlist">
-                                <a href="wishlist.html"><img src="assets/img/user.png" alt=""></a>
+                                <a href="wishlist.html"><img src="asset/frontend/assets/img/user.png" alt=""></a>
                             </div>
                             <div class="mini_cart_wrapper">
-                                <a href="javascript:void(0)"><img src="assets/img/shopping-bag.png" alt=""></a>
+                                <a href="javascript:void(0)"><img src="asset/frontend/assets/img/shopping-bag.png" alt=""></a>
                                 <span class="cart_quantity">2</span>
                                 <!--mini cart-->
                                  <div class="mini_cart">
                                     <div class="cart_item">
                                        <div class="cart_img">
-                                           <a href="#"><img src="assets/img/s-product/product.jpg" alt=""></a>
+                                           <a href="#"><img src="asset/frontend/assets/img/s-product/product.jpg" alt=""></a>
                                        </div>
                                         <div class="cart_info">
                                             <a href="#">Sit voluptatem rhoncus sem lectus</a>
@@ -55,7 +55,7 @@
                                     </div>
                                     <div class="cart_item">
                                        <div class="cart_img">
-                                           <a href="#"><img src="assets/img/s-product/product2.jpg" alt=""></a>
+                                           <a href="#"><img src="asset/frontend/assets/img/s-product/product2.jpg" alt=""></a>
                                        </div>
                                         <div class="cart_info">
                                             <a href="#">Natus erro at congue massa commodo</a>
@@ -176,7 +176,7 @@
                     <div class="row align-items-center">
                         <div class="col-lg-3 col-md-6">
                             <div class="logo">
-                                <a href="index-2.html"><img src="assets/img/logo/logo.png" alt=""></a>
+                                <a href="index-2.html"><img src="asset/frontend/assets/img/logo/logo.png" alt=""></a>
                             </div>
                         </div>
                         <div class="col-lg-9 col-md-6">
@@ -191,16 +191,16 @@
                                 </div>
                                 <div class="middel_right_info">
                                     <div class="header_wishlist">
-                                        <a href="#"><img src="assets/img/user.png" alt=""></a>
+                                        <a href="#"><img src="asset/frontend/assets/img/user.png" alt=""></a>
                                     </div>
                                     <div class="mini_cart_wrapper">
-                                        <a href="javascript:void(0)"><img src="assets/img/shopping-bag.png" alt=""></a>
+                                        <a href="javascript:void(0)"><img src="asset/frontend/assets/img/shopping-bag.png" alt=""></a>
                                         <span class="cart_quantity">2</span>
                                         <!--mini cart-->
                                          <div class="mini_cart">
                                             <div class="cart_item">
                                                <div class="cart_img">
-                                                   <a href="#"><img src="assets/img/s-product/product.jpg" alt=""></a>
+                                                   <a href="#"><img src="asset/frontend/assets/img/s-product/product.jpg" alt=""></a>
                                                </div>
                                                 <div class="cart_info">
                                                     <a href="#">Sit voluptatem rhoncus sem lectus</a>
@@ -212,7 +212,7 @@
                                             </div>
                                             <div class="cart_item">
                                                <div class="cart_img">
-                                                   <a href="#"><img src="assets/img/s-product/product2.jpg" alt=""></a>
+                                                   <a href="#"><img src="asset/frontend/assets/img/s-product/product2.jpg" alt=""></a>
                                                </div>
                                                 <div class="cart_info">
                                                     <a href="#">Natus erro at congue massa commodo</a>
