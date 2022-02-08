@@ -2,6 +2,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
+    <base href="{{ asset('/') }}">
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -16,8 +17,7 @@
 <body class="sb-nav-fixed">
    @include('backend.include.navbar')
     <div id="layoutSidenav">
-        @include('backend.pages.sections.sidenav')
-        @include('backend.pages.sections.sidecontent')
+        @yield('content')
     </div>
 @include('backend.include.scripts')
 </body>
