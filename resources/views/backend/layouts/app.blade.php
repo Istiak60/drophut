@@ -17,6 +17,7 @@
 <body class="sb-nav-fixed">
    @include('backend.include.navbar')
     <div id="layoutSidenav">
+        @include('backend.include.sidenav')
         @yield('content')
     </div>
 @include('backend.include.scripts')

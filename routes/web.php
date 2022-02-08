@@ -21,4 +21,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
-Route::get('admin/dashboard', 'Backend\DashboardController@index');
+Route::group(['prefix' => 'admin', 'as' => 'admin.'], function(){
+    Route::get('/', 'Backend\DashboardController@index')->name('dashboard');
+    Route::resource('categories','Backend\CategoryController');
+});
