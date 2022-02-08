@@ -1,4 +1,4 @@
 @extends('backend.layouts.app')
 @section('content')
-@include('backend.pages.dashboard.sections.sidecontent')
+@include('backend.pages.categories.sections.sidecontent')
 @endsection
