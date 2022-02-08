@@ -21,6 +21,8 @@ Route::get('home','Frontend\HomeController@index');
 Route::get('product-details','Frontend\ProductdetailsController@index');
 
 Route::get('tracking','Frontend\TrackingController@index');
+Route::get('privacy-policy','Frontend\PrivacypolicyController@index');
+
 
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
