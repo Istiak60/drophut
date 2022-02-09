@@ -33,6 +33,14 @@
                                 <th>Slug</th>
                                 <td>{{ $category->slug}}</td>
                             </tr>
+                            <tr>
+                                <th>Created at</th>
+                                <td>{{ $category->created_at}}</td>
+                            </tr>
+                            <tr>
+                                <th>Updated at</th>
+                                <td>{{ $category->updated_at}}</td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
