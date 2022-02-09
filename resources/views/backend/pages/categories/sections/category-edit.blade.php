@@ -9,16 +9,18 @@
             <div class="card mb-4">
                 <div class="card-header">
                     <i class="fas fa-table me-1"></i>
-                    Create a new categoty
+                    Update a categoty item
                 </div>
                 <div class="card-body">
-                    <form action="{{ route('admin.categories.store') }}" method="POST">
+                    <form action="{{ route('admin.categories.update', $category->id) }}" method="POST">
                         @csrf
+                        @method('PUT')
                         <div class="row mb-3">
                             <div class="col-md-6">
                                 <div class="form-floating mb-3 mb-md-0">
                                     <input class="form-control @error('title') is-invalid @enderror" id="inputTitle"
-                                        name="title" type="text" placeholder="Enter your title" />
+                                        name="title" value="{{ $category->title }}" type="text"
+                                        placeholder="Enter your title" />
                                     <label for="inputTitle">Title</label>
                                     @error('title')
                                     <div class="alert alert-danger">{{ $message }}</div>
@@ -28,7 +30,8 @@
                             <div class="col-md-6">
                                 <div class="form-floating mb-3 mb-md-0">
                                     <input class="form-control  @error('slug') is-invalid @enderror" id="inputSlug"
-                                        name="slug" type="text" placeholder="Enter your Slug" />
+                                        name="slug" value="{{ $category->slug }}" type="text"
+                                        placeholder="Enter your Slug" />
                                     <label for="inputSlug">Slug</label>
                                     @error('slug')
                                     <div class="alert alert-danger">{{ $message }}</div>
@@ -37,7 +40,7 @@
                             </div>
                         </div>
                         <div class="mt-4 mb-0">
-                            <div class="d-grid"><button class="btn btn-outline-primary btn-block" type="submit">Create a
+                            <div class="d-grid"><button class="btn btn-outline-primary btn-block" type="submit">Update a
                                     Category</button></div>
                         </div>
                     </form>

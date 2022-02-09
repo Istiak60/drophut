@@ -12,9 +12,23 @@
                     Table of Categories
                 </div>
                 <div class="card-body">
+                    <div class="pull-right mb-3">
+                        <a class="btn btn-success" href="{{ route('admin.categories.create') }}">Create New Category</a>
+                    </div>
+                    @if ($message = Session::get('success'))
+                    <div class="alert alert-success mt-3">
+                        <p>{{ $message }}</p>
+                    </div>
+                    @endif
+                    @if ($message = Session::get('danger'))
+                    <div class="alert alert-danger mt-3">
+                        <p>{{ $message }}</p>
+                    </div>
+                    @endif
                     <table id="datatablesSimple">
                         <thead>
                             <tr>
+                                <th>SL</th>
                                 <th>Title</th>
                                 <th>Slug</th>
                                 <th>Action</th>
@@ -22,28 +36,35 @@
                         </thead>
                         <tfoot>
                             <tr>
+                                <th>SL</th>
                                 <th>Title</th>
                                 <th>Slug</th>
                                 <th>Action</th>
                             </tr>
                         </tfoot>
                         <tbody>
+                            @php
+                            $i = 1;
+                            @endphp
                             @foreach ($categories as $item)
                             <tr>
+                                <td>{{ $i++ }}</td>
                                 <td>{{ $item->title }}</td>
                                 <td>{{ $item->slug }}</td>
                                 <td>
-                                    <div class="btn-group" role="group" aria-label="Basic example">
-                                        <a href=""><button type="button" class="btn btn-info"><i class="bi bi-list"></i>
-                                                Show</button></a>
-                                        <a href=""><button type="button" class="btn btn-warning"><i
-                                                    class="bi bi-pencil-square"></i>
-                                                Edit</button></a>
-                                        <a href=""
-                                            onclick="return confirm('Are you sure you want delete the item!')"><button
-                                                type="button" class="btn btn-danger"><i class="bi bi-trash"></i>
-                                                Delete</button>
-                                    </div>
+                                    <form action="{{ route('admin.categories.destroy',$item->id) }}" method="POST">
+
+                                        <a class="btn btn-info"
+                                            href="{{ route('admin.categories.show',$item->id) }}">Show</a>
+
+                                        <a class="btn btn-primary"
+                                            href="{{ route('admin.categories.edit',$item->id) }}">Edit</a>
+
+                                        @csrf
+                                        @method('DELETE')
+
+                                        <button type="submit" class="btn btn-outline-danger">Delete</button>
+                                    </form>
                                 </td>
                             </tr>
                             @endforeach

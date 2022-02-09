@@ -48,7 +48,7 @@ class CategoryController extends Controller
         $category->slug = $data['slug'];
 
         if ($category->save()) {
-            return redirect('admin/categories');
+            return redirect()->route('admin.categories.index')->with('success','Item added successfully');
         }
     }
 
@@ -58,9 +58,9 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Category $category)
     {
-        //
+        return view('backend.pages.categories.show', compact('category'));
     }
 
     /**
@@ -69,9 +69,9 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Category $category)
     {
-        //
+        return view('backend.pages.categories.edit',compact('category'));
     }
 
     /**
@@ -81,9 +81,15 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Category $category)
     {
-        //
+        $request->validate([
+            'title' => 'required',
+            'slug' => 'required',
+        ]);
+
+        $category->update($request->all());
+        return redirect()->route('admin.categories.index')->with('success','Item updated successfully');
     }
 
     /**
@@ -92,8 +98,10 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Category $category)
     {
-        //
+        $category->delete();
+    
+        return redirect()->route('admin.categories.index')->with('danger','Item deleted successfully');
     }
 }
