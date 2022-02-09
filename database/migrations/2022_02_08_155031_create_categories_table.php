@@ -17,6 +17,7 @@ class CreateCategoriesTable extends Migration
             $table->id();
             $table->string('title');
             $table->string('slug');
+            $table->enum('trash',['0','1'])->default('0')->comment="0=not trashed,1=trashed";
             $table->timestamps();
         });
     }

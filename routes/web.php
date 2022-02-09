@@ -38,4 +38,8 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 Route::group(['prefix' => 'admin', 'as' => 'admin.'], function(){
     Route::get('/', 'Backend\DashboardController@index')->name('dashboard');
     Route::resource('categories','Backend\CategoryController');
+    Route::get('categories/trash/{id}', 'Backend\CategoryController@trash')->name('categories.trash');
+    Route::get('categories/restore/{id}', 'Backend\CategoryController@restore')->name('categories.restore');
 });
+
+Route::get('categories/trash','Backend\CategoryController@trash_index')->name('categories.trash.index');

@@ -15,8 +15,14 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::all();
+        $categories = Category::all()->where('trash','0');
         return view('backend.pages.categories.index',compact('categories'));
+    }
+
+    public function trash_index()
+    {
+        $categories = Category::all()->where('trash','1');
+        return view('backend.pages.categories.trash-index',compact('categories'));
     }
 
     /**
@@ -102,6 +108,20 @@ class CategoryController extends Controller
     {
         $category->delete();
     
-        return redirect()->route('admin.categories.index')->with('danger','Item deleted successfully');
+        return redirect()->to('categories/trash')->with('danger','Item deleted successfully');
+    }
+
+    public function trash($id)
+    {
+        Category::where('id', $id)->update(['trash' => '1']);
+
+        return redirect()->route('admin.categories.index')->with('success','Item moved to trash');
+    }
+
+    public function restore($id)
+    {
+        Category::where('id', $id)->update(['trash' => '0']);
+
+        return redirect()->route('admin.categories.index')->with('success','Item restored successfully');
     }
 }

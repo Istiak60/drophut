@@ -27,6 +27,7 @@
                             <nav class="sb-sidenav-menu-nested nav">
                                 <a class="nav-link" href="{{ route('admin.categories.index') }}">Index</a>
                                 <a class="nav-link" href="{{ route('admin.categories.create') }}">Create</a>
+                                <a class="nav-link" href="{{ url('categories/trash') }}">Trash</a>
                             </nav>
                         </div>
                         <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"

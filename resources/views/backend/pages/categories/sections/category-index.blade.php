@@ -12,8 +12,13 @@
                     Table of Categories
                 </div>
                 <div class="card-body">
-                    <div class="pull-right mb-3">
+                    <div class="d-flex mb-3">
+                    <div class="mr-3">
                         <a class="btn btn-success" href="{{ route('admin.categories.create') }}">Create New Category</a>
+                    </div>
+                    <div class="">
+                        <a class="btn btn-warning" href="{{ route('categories.trash.index') }}">Trash</a>
+                    </div>
                     </div>
                     @if ($message = Session::get('success'))
                     <div class="alert alert-success mt-3">
@@ -53,7 +58,6 @@
                                 <td>{{ $item->slug }}</td>
                                 <td>
                                     <form action="{{ route('admin.categories.destroy',$item->id) }}" method="POST">
-
                                         <a class="btn btn-info"
                                             href="{{ route('admin.categories.show',$item->id) }}">Show</a>
 
@@ -61,9 +65,11 @@
                                             href="{{ route('admin.categories.edit',$item->id) }}">Edit</a>
 
                                         @csrf
-                                        @method('DELETE')
+                                        {{-- @method('DELETE')
 
-                                        <button type="submit" class="btn btn-outline-danger">Delete</button>
+                                        <button type="submit" class="btn btn-outline-danger">Delete</button> --}}
+                                        <a class="btn btn-danger"
+                                            href="{{ route('admin.categories.trash',$item->id) }}">Trash</a>
                                     </form>
                                 </td>
                             </tr>
