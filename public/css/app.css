@@ -590,6 +590,39 @@ select {
   --tw-backdrop-saturate:  ;
   --tw-backdrop-sepia:  ;
 }
+.container {
+  width: 100%;
+}
+@media (min-width: 640px) {
+
+  .container {
+    max-width: 640px;
+  }
+}
+@media (min-width: 768px) {
+
+  .container {
+    max-width: 768px;
+  }
+}
+@media (min-width: 1024px) {
+
+  .container {
+    max-width: 1024px;
+  }
+}
+@media (min-width: 1280px) {
+
+  .container {
+    max-width: 1280px;
+  }
+}
+@media (min-width: 1536px) {
+
+  .container {
+    max-width: 1536px;
+  }
+}
 .prose {
   color: var(--tw-prose-body);
   max-width: 65ch;
@@ -957,12 +990,25 @@ select {
 .z-50 {
   z-index: 50;
 }
+.order-1 {
+  order: 1;
+}
+.order-4 {
+  order: 4;
+}
+.order-3 {
+  order: 3;
+}
 .col-span-6 {
   grid-column: span 6 / span 6;
 }
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
+}
+.my-2 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 .ml-3 {
   margin-left: 0.75rem;
@@ -1036,6 +1082,15 @@ select {
 .-mt-px {
   margin-top: -1px;
 }
+.mt-60 {
+  margin-top: 15rem;
+}
+.mb-60 {
+  margin-bottom: 15rem;
+}
+.mt-auto {
+  margin-top: auto;
+}
 .block {
   display: block;
 }
@@ -1044,6 +1099,9 @@ select {
 }
 .inline-flex {
   display: inline-flex;
+}
+.table {
+  display: table;
 }
 .grid {
   display: grid;
@@ -1474,6 +1532,12 @@ select {
 }
 .pt-8 {
   padding-top: 2rem;
+}
+.pt-60 {
+  padding-top: 15rem;
+}
+.pb-60 {
+  padding-bottom: 15rem;
 }
 .text-left {
   text-align: left;
