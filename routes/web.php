@@ -22,6 +22,7 @@ Route::get('product-details','Frontend\ProductdetailsController@index');
 
 
 Route::get('404','Frontend\ErrorController@index');
+Route::get('about','Frontend\AboutController@index');
 
 Route::get('tracking','Frontend\TrackingController@index');
 Route::get('privacy-policy','Frontend\PrivacypolicyController@index');
