@@ -25,6 +25,7 @@ Route::get('404','Frontend\ErrorController@index');
 Route::get('about','Frontend\AboutController@index');
 Route::get('blog-details','Frontend\BlogDetailController@index');
 Route::get('blog','Frontend\BlogController@index');
+Route::get('cart','Frontend\CartController@index');
 
 Route::get('tracking','Frontend\TrackingController@index');
 Route::get('privacy-policy','Frontend\PrivacypolicyController@index');
