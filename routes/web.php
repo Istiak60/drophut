@@ -29,6 +29,7 @@ Route::get('cart','Frontend\CartController@index');
 Route::get('checkout','Frontend\CheckoutController@index');
 Route::get('contact','Frontend\ContactController@index');
 Route::get('faq','Frontend\FAQController@index');
+Route::get('forget-password','Frontend\ForgetPasswordController@index');
 
 
 
