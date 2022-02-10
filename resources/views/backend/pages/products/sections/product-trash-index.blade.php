@@ -30,7 +30,11 @@
                             <tr>
                                 <th>SL</th>
                                 <th>Title</th>
-                                <th>Slug</th>
+                                <th>Price</th>
+                                <th>Short Description</th>
+                                <th>Description</th>
+                                <th>Image</th>
+                                <th>Category</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -38,7 +42,11 @@
                             <tr>
                                 <th>SL</th>
                                 <th>Title</th>
-                                <th>Slug</th>
+                                <th>Price</th>
+                                <th>Short Description</th>
+                                <th>Description</th>
+                                <th>Image</th>
+                                <th>Category</th>
                                 <th>Action</th>
                             </tr>
                         </tfoot>
@@ -50,11 +58,18 @@
                             <tr>
                                 <td>{{ $i++ }}</td>
                                 <td>{{ $item->title }}</td>
-                                <td>{{ $item->slug }}</td>
+                                <td>{{ $item->price }}</td>
+                                <td>{{ $item->short_description}}</td>
+                                <td>{{ $item->description }}</td>
+                                <td>
+                                    <img src=" {{ asset('storage/Product_image/'.$item->image) }}"
+                                        style="height:50px;width:60px">
+                                </td>
+                                <td>{{ $item->category_id }}</td>
                                 <td>
                                     <form action="{{ route('admin.products.destroy',$item->id) }}" method="POST">
                                         <a class="btn btn-success"
-                                        href="{{ route('admin.products.restore',$item->id) }}">Restore</a>
+                                            href="{{ route('admin.products.restore',$item->id) }}">Restore</a>
 
                                         @csrf
                                         @method('DELETE')
