@@ -46,11 +46,15 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function(){
     Route::get('/', 'Backend\DashboardController@index')->name('dashboard');
     Route::resource('categories','Backend\CategoryController');
     Route::resource('products','Backend\ProductController');
+    Route::resource('sliders','Backend\SliderController');
     Route::get('categories/trash/{id}', 'Backend\CategoryController@trash')->name('categories.trash');
     Route::get('categories/restore/{id}', 'Backend\CategoryController@restore')->name('categories.restore');
     Route::get('products/trash/{id}', 'Backend\CategoryController@trash')->name('products.trash');
     Route::get('products/restore/{id}', 'Backend\CategoryController@restore')->name('products.restore');
+    Route::get('sliders/trash/{id}', 'Backend\SliderController@trash')->name('sliders.trash');
+    Route::get('sliders/restore/{id}', 'Backend\SliderController@restore')->name('sliders.restore');
 });
 
 Route::get('categories/trash','Backend\CategoryController@trash_index')->name('categories.trash.index');
 Route::get('products/trash','Backend\CategoryController@trash_index')->name('products.trash.index');
+Route::get('slider/trash','Backend\SliderController@trash_index')->name('sliders.trash.index');
