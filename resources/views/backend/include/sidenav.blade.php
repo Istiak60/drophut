@@ -39,8 +39,23 @@
                         <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne"
                             data-bs-parent="#sidenavAccordionPages">
                             <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="401.html">Index</a>
-                                <a class="nav-link" href="404.html">Create</a>
+                                 <a class="nav-link" href="{{ route('admin.products.index') }}">Index</a>
+                                <a class="nav-link" href="{{ route('admin.products.create') }}">Create</a>
+                                <a class="nav-link" href="{{ url('products/trash') }}">Trash</a>
+                            </nav>
+                        </div>
+                           <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
+                            data-bs-target="#pagesCollapseSlider" aria-expanded="false"
+                            aria-controls="pagesCollapseSlider">
+                            Slider
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                        </a>
+                        <div class="collapse" id="pagesCollapseSlider" aria-labelledby="headingOne"
+                            data-bs-parent="#sidenavAccordionPages">
+                            <nav class="sb-sidenav-menu-nested nav">
+                                 <a class="nav-link" href="{{ route('admin.sliders.index') }}">Index</a>
+                                <a class="nav-link" href="{{ route('admin.sliders.create') }}">Create</a>
+                                <a class="nav-link" href="{{ url('sliders/trash') }}">Trash</a>
                             </nav>
                         </div>
                     </nav>
