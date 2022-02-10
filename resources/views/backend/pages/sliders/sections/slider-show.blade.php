@@ -1,19 +1,19 @@
 <div id="layoutSidenav_content">
     <main>
         <div class="container-fluid px-4">
-            <h1 class="mt-4">Products</h1>
+            <h1 class="mt-4">Sliders</h1>
             <ol class="breadcrumb mb-4">
                 <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
-                <li class="breadcrumb-item active">Products</li>
+                <li class="breadcrumb-item active">Sliders</li>
             </ol>
             <div class="card mb-4">
                 <div class="card-header">
                     <i class="fas fa-table me-1"></i>
-                    An item of Products
+                    An item of Sliders
                 </div>
                 <div class="card-body">
                     <div class="pull-right mb-3">
-                        <a class="btn btn-success" href="{{ route('admin.products.index') }}">Go to index</a>
+                        <a class="btn btn-success" href="{{ route('admin.sliders.index') }}">Go to index</a>
                     </div>
                     <table class="table table-bordered">
                         <tbody>
@@ -23,31 +23,33 @@
                             </tr>
                             <tr>
                                 <th>ID</th>
-                                <td>{{ $product->id }}</td>
+                                <td>{{ $slider->id }}</td>
                             </tr>
                             <tr>
                                 <th>Title</th>
-                                <td>{{ $product->title }}</td>
+                                <td>{{ $slider->title }}</td>
                             </tr>
                             <tr>
-                                <th>Price</th>
-                                <td>{{ $product->price}}</td>
+                                <th>Subtitle</th>
+                                <td>{{ $slider->subtitle}}</td>
                             </tr>
                             <tr>
-                                <th>Short_description</th>
-                                <td>{{ $product->short_description}}</td>
+                                <th>Offer</th>
+                                <td>{{ $slider->offer}}</td>
                             </tr>
                             <tr>
-                                <th>Description</th>
-                                <td>{{ $product->description}}</td>
+                                <th>Image</th>
+                                <td> <img src=" {{ asset('storage/Slider_image/'.$slider->image) }}" style="height:50px;width:60px">
+</td>
+                                
                             </tr>
                             <tr>
                                 <th>Created at</th>
-                                <td>{{ $product->created_at}}</td>
+                                <td>{{ $slider->created_at}}</td>
                             </tr>
                             <tr>
                                 <th>Updated at</th>
-                                <td>{{ $product->updated_at}}</td>
+                                <td>{{ $slider->updated_at}}</td>
                             </tr>
                         </tbody>
                     </table>
