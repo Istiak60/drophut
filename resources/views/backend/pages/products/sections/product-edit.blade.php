@@ -65,9 +65,9 @@
                                 <select class="form-control @error('category_id') is-invalid @enderror"
                                     name="category_id" id="category_id">
                                     <option value="">Select Please</option>
-                                    <option value="Phone" {{ ($product->category_id)=="phone "? 'selected' : '' }}>Phone
+                                    <option value="Phone" {{ ($product->category_id)=="phone" ? 'selected' : '' }}>Phone
                                     </option>
-                                    <option value="tv" {{ ($product->category_id)=="tv"? 'selected' : '' }}>Tv</option>
+                                    <option value="tv" {{ ($product->category_id)=="tv" ? 'selected' : '' }}>Tv</option>
                                     <option value="watch" {{ ($product->category_id)=="watch" ? 'selected' : '' }}>Watch
                                     </option>
                                 </select>

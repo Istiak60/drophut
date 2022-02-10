@@ -23,6 +23,7 @@ class ProductController extends Controller
     public function trash_index()
     {
         $products = Product::all()->where('trash','1');
+    
         return view('backend.pages.products.trash-index',compact('products'));
     }
 

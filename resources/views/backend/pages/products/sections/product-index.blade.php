@@ -13,12 +13,13 @@
                 </div>
                 <div class="card-body">
                     <div class="d-flex mb-3">
-                    <div class="mr-3">
-                        <a class="btn btn-success" href="{{ route('admin.products.create') }}">Create New Product</a>
-                    </div>
-                    <div class="">
-                        <a class="btn btn-warning" href="{{ route('products.trash.index') }}">Trash</a>
-                    </div>
+                        <div class="mr-3">
+                            <a class="btn btn-success" href="{{ route('admin.products.create') }}">Create New
+                                Product</a>
+                        </div>
+                        <div class="">
+                            <a class="btn btn-warning" href="{{ route('products.trash.index') }}">Trash</a>
+                        </div>
                     </div>
                     @if ($message = Session::get('success'))
                     <div class="alert alert-success mt-3">
@@ -45,7 +46,7 @@
                         </thead>
                         <tfoot>
                             <tr>
-                                  <th>SL</th>
+                                <th>SL</th>
                                 <th>Title</th>
                                 <th>Price</th>
                                 <th>Short Description</th>
@@ -67,8 +68,9 @@
                                 <td>{{ $item->short_description}}</td>
                                 <td>{{ $item->description }}</td>
                                 <td>
-                                <img src=" {{ asset('storage/Product_image/'.$item->image) }}" style="height:50px;width:60px">
-                               </td>
+                                    <img src=" {{ asset('storage/Product_image/'.$item->image) }}"
+                                        style="height:50px;width:60px">
+                                </td>
                                 <td>{{ $item->category_id }}</td>
                                 <td>
                                     <form action="{{ route('admin.products.destroy',$item->id) }}" method="POST">
