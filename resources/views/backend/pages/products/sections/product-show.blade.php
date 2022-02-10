@@ -30,16 +30,24 @@
                                 <td>{{ $product->title }}</td>
                             </tr>
                             <tr>
-                                <th>Slug</th>
+                                <th>Price</th>
                                 <td>{{ $product->price}}</td>
                             </tr>
                             <tr>
-                                <th>Slug</th>
+                                <th>Short Description</th>
                                 <td>{{ $product->short_description}}</td>
                             </tr>
                             <tr>
-                                <th>Slug</th>
+                                <th>Description</th>
                                 <td>{{ $product->description}}</td>
+                            </tr>
+                            <tr>
+                                <th>Category</th>
+                                <td>{{ $product->category_id}}</td>
+                            </tr>
+                            <tr>
+                                <th>Image</th>
+                                <td><img src=" {{ asset('storage/Product_image/'.$product->image) }}" style="height:200px;width:250px"></td>
                             </tr>
                             <tr>
                                 <th>Created at</th>
