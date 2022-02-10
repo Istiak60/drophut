@@ -12,36 +12,84 @@
                     Update a categoty item
                 </div>
                 <div class="card-body">
-                    <form action="{{ route('admin.products.update', $product->id) }}" method="POST">
+                    <form action="{{ route('admin.products.update', $product->id) }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
                         <div class="row mb-3">
-                            <div class="col-md-6">
+                            <div class="col-md-6 mb-3">
                                 <div class="form-floating mb-3 mb-md-0">
                                     <input class="form-control @error('title') is-invalid @enderror" id="inputTitle"
-                                        name="title" value="{{ $product->title }}" type="text"
-                                        placeholder="Enter your title" />
+                                        name="title" value="{{ $product->title }}" type="text" />
                                     <label for="inputTitle">Title</label>
                                     @error('title')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-6 mb-3">
                                 <div class="form-floating mb-3 mb-md-0">
-                                    <input class="form-control  @error('slug') is-invalid @enderror" id="inputSlug"
-                                        name="slug" value="{{ $product->slug }}" type="text"
-                                        placeholder="Enter your Slug" />
-                                    <label for="inputSlug">Slug</label>
-                                    @error('slug')
+                                    <input class="form-control @error('price') is-invalid @enderror" id="inputPrice"
+                                        name="price" value="{{ $product->price }}" type="text" />
+                                    <label for="inputPrice">Price</label>
+                                    @error('price')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="form-floating mb-3 mb-md-0">
+                                    <input class="form-control @error('short_description') is-invalid @enderror"
+                                        id="inputShortDescription" name="short_description"
+                                        value="{{ $product->short_description }}" type="text" />
+                                    <label for="inputShortDescription">ShortDescription</label>
+                                    @error('short_description')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="form-floating mb-3 mb-md-0">
+                                    <input class="form-control @error('description') is-invalid @enderror"
+                                        id="inputDescription" name="description" value="{{ $product->description }}"
+                                        type="text" />
+                                    <label for="inputDescription">Description</label>
+                                    @error('description')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-6 mb-3">
+                                <label for="category_id">Category</label>
+                                <select class="form-control @error('category_id') is-invalid @enderror"
+                                    name="category_id" id="category_id">
+                                    <option value="">Select Please</option>
+                                    <option value="Phone" {{ ($product->category_id)=="phone "? 'selected' : '' }}>Phone
+                                    </option>
+                                    <option value="tv" {{ ($product->category_id)=="tv"? 'selected' : '' }}>Tv</option>
+                                    <option value="watch" {{ ($product->category_id)=="watch" ? 'selected' : '' }}>Watch
+                                    </option>
+                                </select>
+                                @error('category_id')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="form-floating mb-3 mb-md-0">
+                                    <input class="form-control" id="inputImage" name="image" type="file" />
+                                    <label for="inputImage">Image</label>
+                                    @error('image')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
                                 </div>
                             </div>
                         </div>
                         <div class="mt-4 mb-0">
-                            <div class="d-grid"><button class="btn btn-outline-primary btn-block" type="submit">Update a
-                                    Category</button></div>
+                            <div class="d-grid"><button class="btn btn-outline-primary btn-block" type="submit">Create a
+                                    Product</button></div>
                         </div>
                     </form>
                 </div>

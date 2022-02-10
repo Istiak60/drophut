@@ -46,20 +46,16 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         $data = $request->validate([
-            'title' => 'required',
-            'price' => 'required',
+            'title'             => 'required',
+            'price'             => 'required',
             'short_description' => 'required',
-            'description' => 'required',
-            'image' => 'required',
-            'category_id' => 'required',
+            'description'       => 'required',
+            'image'             => 'required|mimes:jpg,jpeg,png',
+            'category_id'       => 'required'
         ]);
+        
         $file =  $request->file('image');
-      
-        $fileName = $file->getClientOriginalName();
-        $fileExtension = $file->getClientOriginalExtension();
-        $uploadName = $fileName.'.'.$fileExtension;
-
-       $file->storeAs('public/Product_Image',$uploadName);
+        $uploadName = $this->fileUpload($file);
 
         $product = new Product($request->all());
         $product->image = $uploadName;
@@ -88,9 +84,9 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Product $category)
+    public function edit(Product $product)
     {
-        return view('backend.pages.products.edit',compact('category'));
+        return view('backend.pages.products.edit',compact('product'));
     }
 
     /**
@@ -100,14 +96,23 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Product $category)
+    public function update(Request $request, Product $product)
     {
-        $request->validate([
-            'title' => 'required',
-            'slug' => 'required',
+        $data = $request->validate([
+            'title'             => 'required',
+            'price'             => 'required',
+            'short_description' => 'required',
+            'description'       => 'required',
+            'image'             => 'required',
+            'category_id'       => 'required'
         ]);
+        // dd($request->file('image'));
 
-        $category->update($request->all());
+        $picture = $this->fileUpload($request->file('image'));
+        if(empty($picture))$picture = $product->picture;
+        $product->fill($request->all());
+        $product->image = $picture;
+        $product->save();
         return redirect()->route('admin.products.index')->with('success','Item updated successfully');
     }
 
@@ -117,9 +122,9 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Product $category)
+    public function destroy(Product $product)
     {
-        $category->delete();
+        $product->delete();
     
         return redirect()->to('products/trash')->with('danger','Item deleted successfully');
     }
@@ -128,7 +133,7 @@ class ProductController extends Controller
     {
         Product::where('id', $id)->update(['trash' => '1']);
 
-        return redirect()->route('admin.products.index')->with('success','Item moved to trash');
+        return redirect()->route('admin.products.index')->with('danger','Item moved to trash');
     }
 
     public function restore($id)
@@ -136,5 +141,17 @@ class ProductController extends Controller
         Product::where('id', $id)->update(['trash' => '0']);
 
         return redirect()->route('admin.products.index')->with('success','Item restored successfully');
+    }
+
+    private function fileUpload($file){
+        $prefix='Product_'.time().'_';
+        $picture='';
+        if(!empty($file)){
+            $name='img.';
+            $fileext = $file->getClientOriginalExtension();
+            $picture = $prefix.$name.$fileext;
+            $path = $file->storeAs('public/Product_Image',$picture);
+        }
+        return $picture;
     }
 }
