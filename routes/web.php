@@ -49,8 +49,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function(){
     Route::resource('sliders','Backend\SliderController');
     Route::get('categories/trash/{id}', 'Backend\CategoryController@trash')->name('categories.trash');
     Route::get('categories/restore/{id}', 'Backend\CategoryController@restore')->name('categories.restore');
-    Route::get('products/trash/{id}', 'Backend\CategoryController@trash')->name('products.trash');
-    Route::get('products/restore/{id}', 'Backend\CategoryController@restore')->name('products.restore');
+    Route::get('products/trash/{id}', 'Backend\ProductController@trash')->name('products.trash');
+    Route::get('products/restore/{id}', 'Backend\ProductController@restore')->name('products.restore');
     Route::get('sliders/trash/{id}', 'Backend\SliderController@trash')->name('sliders.trash');
     Route::get('sliders/restore/{id}', 'Backend\SliderController@restore')->name('sliders.restore');
 });
