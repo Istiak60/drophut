@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Backend;
 
+use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\Controller;
 use App\Models\Product;
 use Illuminate\Http\Request;
@@ -15,7 +16,14 @@ class ProductController extends Controller
      */
     public function index()
     {
-        
+        $products = Product::all()->where('trash','0');
+        return view('backend.pages.products.index',compact('products'));
+    }
+
+    public function trash_index()
+    {
+        $products = Product::all()->where('trash','1');
+        return view('backend.pages.products.trash-index',compact('products'));
     }
 
     /**
@@ -25,7 +33,8 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        $products = Product::all();
+        return view('backend.pages.products.create',compact('products'));
     }
 
     /**
@@ -36,7 +45,30 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->validate([
+            'title' => 'required',
+            'price' => 'required',
+            'short_description' => 'required',
+            'description' => 'required',
+            'image' => 'required',
+            'category_id' => 'required',
+        ]);
+        $file =  $request->file('image');
+      
+        $fileName = $file->getClientOriginalName();
+        $fileExtension = $file->getClientOriginalExtension();
+        $uploadName = $fileName.'.'.$fileExtension;
+
+       $file->storeAs('public/Product_Image',$uploadName);
+
+        $product = new Product($request->all());
+        $product->image = $uploadName;
+
+        
+
+        if ($product->save()) {
+            return redirect()->route('admin.products.index')->with('success','Item added successfully');
+        }
     }
 
     /**
@@ -45,9 +77,9 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Product $product)
     {
-        //
+        return view('backend.pages.products.show', compact('product'));
     }
 
     /**
@@ -56,9 +88,9 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Product $category)
     {
-        //
+        return view('backend.pages.products.edit',compact('category'));
     }
 
     /**
@@ -68,9 +100,15 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Product $category)
     {
-        //
+        $request->validate([
+            'title' => 'required',
+            'slug' => 'required',
+        ]);
+
+        $category->update($request->all());
+        return redirect()->route('admin.products.index')->with('success','Item updated successfully');
     }
 
     /**
@@ -79,8 +117,24 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Product $category)
     {
-        //
+        $category->delete();
+    
+        return redirect()->to('products/trash')->with('danger','Item deleted successfully');
+    }
+
+    public function trash($id)
+    {
+        Product::where('id', $id)->update(['trash' => '1']);
+
+        return redirect()->route('admin.products.index')->with('success','Item moved to trash');
+    }
+
+    public function restore($id)
+    {
+        Product::where('id', $id)->update(['trash' => '0']);
+
+        return redirect()->route('admin.products.index')->with('success','Item restored successfully');
     }
 }
