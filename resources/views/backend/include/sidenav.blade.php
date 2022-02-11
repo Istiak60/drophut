@@ -58,6 +58,20 @@
                                 <a class="nav-link" href="{{ url('sliders/trash') }}">Trash</a>
                             </nav>
                         </div>
+                           <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
+                            data-bs-target="#pagesCollapseBlog" aria-expanded="false"
+                            aria-controls="pagesCollapseBlog">
+                            Blog
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                        </a>
+                        <div class="collapse" id="pagesCollapseBlog" aria-labelledby="headingOne"
+                            data-bs-parent="#sidenavAccordionPages">
+                            <nav class="sb-sidenav-menu-nested nav">
+                                 <a class="nav-link" href="{{ route('admin.blogs.index') }}">Index</a>
+                                <a class="nav-link" href="{{ route('admin.blogs.create') }}">Create</a>
+                                <a class="nav-link" href="{{ url('blogs/trash') }}">Trash</a>
+                            </nav>
+                        </div>
                     </nav>
                 </div>
             </div>
