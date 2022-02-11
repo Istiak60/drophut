@@ -44,9 +44,20 @@
                                     <input class="form-control  @error('short_description') is-invalid @enderror"
                                         id="inputShortDescription" name="short_description"
                                         value="{{ $blog->short_description }}" type="text"
-                                        placeholder="Enter your ShortDescription" />
+                                        placeholder="Enter your Short Description" />
                                     <label for="inputShortDescription">Short Description</label>
                                     @error('short_description')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="form-floating mb-3 mb-md-0">
+                                    <input class="form-control  @error('description') is-invalid @enderror"
+                                        id="inputDescription" name="description" value="{{ $blog->description }}"
+                                        type="text" placeholder="Enter your Description" />
+                                    <label for="inputDescription">Description</label>
+                                    @error('description')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
                                 </div>

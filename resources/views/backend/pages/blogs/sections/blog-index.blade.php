@@ -37,6 +37,7 @@
                                 <th>Title</th>
                                 <th>Posted By</th>
                                 <th>Short Description</th>
+                                <th>Description</th>
                                 <th>Image</th>
                                 <th>Action</th>
                             </tr>
@@ -47,6 +48,7 @@
                                 <th>Title</th>
                                 <th>Posted By</th>
                                 <th>Short Description</th>
+                                <th>Description</th>
                                 <th>Image</th>
                                 <th>Action</th>
                             </tr>
@@ -61,6 +63,7 @@
                                 <td>{{ $item->title }}</td>
                                 <td>{{ $item->posted_by }}</td>
                                 <td>{{ $item->short_description}}</td>
+                                <td>{{ $item->description}}</td>
                                 <td>
                                     <img src=" {{ asset('storage/Blog_image/'.$item->image) }}"
                                         style="height:50px;width:60px">

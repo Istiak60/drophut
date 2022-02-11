@@ -47,6 +47,16 @@
                             </div>
                             <div class="col-md-6 mb-3">
                                 <div class="form-floating mb-3 mb-md-0">
+                                    <input class="form-control @error('description') is-invalid @enderror"
+                                        id="inputDescription" name="description" type="text" />
+                                    <label for="inputDescription">Description</label>
+                                    @error('description')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="form-floating mb-3 mb-md-0">
                                     <input class="form-control" id="inputImage" name="image" type="file" />
                                     <label for="inputImage">Image</label>
                                     @error('image')

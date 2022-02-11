@@ -22,7 +22,7 @@ Route::get('/','Frontend\HomeController@index')->name('home');
 Route::get('product-details/{id}','Frontend\ProductdetailsController@show')->name('product.details');
 Route::get('404','Frontend\ErrorController@index')->name('404');
 Route::get('about','Frontend\AboutController@index')->name('about');
-Route::get('blog-details','Frontend\BlogDetailController@index')->name('blog-details');
+Route::get('blog-details/{id}','Frontend\BlogDetailController@index')->name('blog-details');
 Route::get('blog','Frontend\BlogController@index')->name('blog');
 Route::get('cart','Frontend\CartController@index')->name('cart');
 Route::get('checkout','Frontend\CheckoutController@index')->name('checkout');

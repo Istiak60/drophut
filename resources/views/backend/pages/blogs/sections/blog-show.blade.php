@@ -38,6 +38,10 @@
                                 <td>{{ $blog->short_description}}</td>
                             </tr>
                             <tr>
+                                <th>Description</th>
+                                <td>{{ $blog->description}}</td>
+                            </tr>
+                            <tr>
                                 <th>Image</th>
                                 <td> <img src=" {{ asset('storage/Blog_image/'.$blog->image) }}"
                                         style="height:150px;width:220px">
