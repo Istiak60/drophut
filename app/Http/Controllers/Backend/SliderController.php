@@ -88,9 +88,9 @@ class SliderController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Slider $category)
+    public function edit(Slider $slider)
     {
-        return view('backend.pages.sliders.edit',compact('category'));
+        return view('backend.pages.sliders.edit',compact('slider'));
     }
 
     /**
