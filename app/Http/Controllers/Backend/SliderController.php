@@ -100,14 +100,14 @@ class SliderController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Slider $category)
+    public function update(Request $request, Slider $slider)
     {
         $request->validate([
             'title' => 'required',
             'slug' => 'required',
         ]);
 
-        $category->update($request->all());
+        $slider->update($request->all());
         return redirect()->route('admin.sliders.index')->with('success','Item updated successfully');
     }
 
@@ -117,18 +117,18 @@ class SliderController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Slider $category)
+    public function destroy(Slider $slider)
     {
-        $category->delete();
+        $slider->delete();
     
-        return redirect()->to('sliders/trash')->with('danger','Item deleted successfully');
+        return redirect()->to('slider/trash')->with('danger','Item deleted successfully');
     }
 
     public function trash($id)
     {
         Slider::where('id', $id)->update(['trash' => '1']);
 
-        return redirect()->route('admin.sliders.index')->with('success','Item moved to trash');
+        return redirect()->route('admin.sliders.index')->with('danger','Item moved to trash');
     }
 
     public function restore($id)
