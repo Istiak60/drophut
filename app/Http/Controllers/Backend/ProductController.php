@@ -62,8 +62,6 @@ class ProductController extends Controller
         $product = new Product($request->all());
         $product->image = $uploadName;
 
-        
-
         if ($product->save()) {
             return redirect()->route('admin.products.index')->with('success','Item added successfully');
         }

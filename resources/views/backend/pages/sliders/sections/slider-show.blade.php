@@ -39,7 +39,7 @@
                             </tr>
                             <tr>
                                 <th>Image</th>
-                                <td> <img src=" {{ asset('storage/Slider_image/'.$slider->image) }}" style="height:150px;width:220px">
+                                <td> <img src="{{ asset('storage/Slider_image/'.$slider->image) }}" style="height:150px;width:220px">
 </td>
                                 
                             </tr>

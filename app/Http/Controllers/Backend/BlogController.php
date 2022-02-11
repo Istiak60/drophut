@@ -53,13 +53,9 @@ class BlogController extends Controller
             'image'             => 'required',
            
         ]);
+        
         $file =  $request->file('image');
-      
-        $fileName = $file->getClientOriginalName();
-        $fileExtension = $file->getClientOriginalExtension();
-        $uploadName = $fileName.'.'.$fileExtension;
-
-       $file->storeAs('public/Blog_Image',$uploadName);
+        $uploadName = $this->fileUpload($file);
 
         $blog = new Blog($request->all());
         $blog->image = $uploadName;
