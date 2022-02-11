@@ -1,22 +1,22 @@
 <div id="layoutSidenav_content">
     <main>
         <div class="container-fluid px-4">
-            <h1 class="mt-4">Categories</h1>
+            <h1 class="mt-4">Sliders</h1>
             <ol class="breadcrumb mb-4">
                 <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
-                <li class="breadcrumb-item active">Categories</li>
+                <li class="breadcrumb-item active">Sliders</li>
             </ol>
             <div class="card mb-4">
                 <div class="card-header">
                     <i class="fas fa-table me-1"></i>
-                    Update a categoty item
+                    Update a Slider item
                 </div>
                 <div class="card-body">
-                    <form action="{{ route('admin.sliders.update', $slider->id) }}" method="POST">
+                    <form action="{{ route('admin.sliders.update', $slider->id) }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
                         <div class="row mb-3">
-                            <div class="col-md-6">
+                            <div class="col-md-6 mb-3">
                                 <div class="form-floating mb-3 mb-md-0">
                                     <input class="form-control @error('title') is-invalid @enderror" id="inputTitle"
                                         name="title" value="{{ $slider->title }}" type="text"
@@ -27,21 +27,45 @@
                                     @enderror
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-6 mb-3">
                                 <div class="form-floating mb-3 mb-md-0">
-                                    <input class="form-control  @error('slug') is-invalid @enderror" id="inputSlug"
-                                        name="slug" value="{{ $slider->slug }}" type="text"
-                                        placeholder="Enter your Slug" />
-                                    <label for="inputSlug">Slug</label>
-                                    @error('slug')
+                                    <input class="form-control @error('subtitle') is-invalid @enderror" id="inputSubtitle"
+                                        name="subtitle" value="{{ $slider->subtitle }}" type="text"
+                                        placeholder="Enter your subtitle" />
+                                    <label for="inputSubtitle">Subtitle</label>
+                                    @error('subtitle')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
                                 </div>
                             </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="form-floating mb-3 mb-md-0">
+                                    <input class="form-control  @error('offer') is-invalid @enderror" id="inputOffer"
+                                        name="offer" value="{{ $slider->offer }}" type="text"
+                                        placeholder="Enter your Offer" />
+                                    <label for="inputOffer">Offer</label>
+                                    @error('offer')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+                                <div class="form-floating mb-3 mb-md-0">
+                                    <input class="form-control" id="inputImage" name="image" type="file" value="{{ $slider->image }}"/>
+                                    <label class="mb-3" for="inputImage">Image</label>
+                                    @error('image')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                            </div>
+
+
+
                         </div>
                         <div class="mt-4 mb-0">
                             <div class="d-grid"><button class="btn btn-outline-primary btn-block" type="submit">Update a
-                                    Category</button></div>
+                                    Slider</button></div>
                         </div>
                     </form>
                 </div>

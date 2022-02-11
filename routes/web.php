@@ -55,5 +55,5 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function(){
 
 Route::get('categories/trash','Backend\CategoryController@trash_index')->name('categories.trash.index');
 Route::get('products/trash','Backend\ProductController@trash_index')->name('products.trash.index');
-Route::get('slider/trash','Backend\SliderController@trash_index')->name('sliders.trash.index');
+Route::get('sliders/trash','Backend\SliderController@trash_index')->name('sliders.trash.index');
 

@@ -104,10 +104,18 @@ class SliderController extends Controller
     {
         $request->validate([
             'title' => 'required',
-            'slug' => 'required',
+            'subtitle' => 'required',
+            'offer' => 'required',
+            'image' => 'required',
         ]);
 
-        $slider->update($request->all());
+        $picture = $this->fileUpload($request->file('image'));
+        if(empty($picture))$picture = $slider->picture;
+        $slider->fill($request->all());
+        $slider->image = $picture;
+        $slider->save();
+
+        // $slider->update($request->all());
         return redirect()->route('admin.sliders.index')->with('success','Item updated successfully');
     }
 
@@ -136,5 +144,18 @@ class SliderController extends Controller
         Slider::where('id', $id)->update(['trash' => '0']);
 
         return redirect()->route('admin.sliders.index')->with('success','Item restored successfully');
+    }
+
+
+    private function fileUpload($file){
+        $prefix='Slider_'.time().'_';
+        $picture='';
+        if(!empty($file)){
+            $name='img.';
+            $fileext = $file->getClientOriginalExtension();
+            $picture = $prefix.$name.$fileext;
+            $path = $file->storeAs('public/Slider_Image',$picture);
+        }
+        return $picture;
     }
 }

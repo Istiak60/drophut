@@ -1,15 +1,15 @@
 <div id="layoutSidenav_content">
     <main>
         <div class="container-fluid px-4">
-            <h1 class="mt-4">Categories</h1>
+            <h1 class="mt-4">Sliders</h1>
             <ol class="breadcrumb mb-4">
                 <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
-                <li class="breadcrumb-item active">Categories</li>
+                <li class="breadcrumb-item active">Sliders</li>
             </ol>
             <div class="card mb-4">
                 <div class="card-header">
                     <i class="fas fa-table me-1"></i>
-                    Table of Categories
+                    Table of Sliders
                 </div>
                 <div class="card-body">
                     <div class="pull-right mb-3">
@@ -30,7 +30,9 @@
                             <tr>
                                 <th>SL</th>
                                 <th>Title</th>
-                                <th>Slug</th>
+                                <th>Subtitle</th>
+                                <th>Offer</th>
+                                <th>Image</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -38,7 +40,9 @@
                             <tr>
                                 <th>SL</th>
                                 <th>Title</th>
-                                <th>Slug</th>
+                                <th>Subtitle</th>
+                                <th>Offer</th>
+                                <th>Image</th>
                                 <th>Action</th>
                             </tr>
                         </tfoot>
@@ -50,7 +54,9 @@
                             <tr>
                                 <td>{{ $i++ }}</td>
                                 <td>{{ $item->title }}</td>
-                                <td>{{ $item->slug }}</td>
+                                <td>{{ $item->subtitle }}</td>
+                                <td>{{ $item->offer }}</td>
+                                <td><img src=" {{ asset('storage/Slider_image/'.$item->image) }}" style="height:50px;width:60px"></td>
                                 <td>
                                     <form action="{{ route('admin.sliders.destroy',$item->id) }}" method="POST">
                                         <a class="btn btn-success"
