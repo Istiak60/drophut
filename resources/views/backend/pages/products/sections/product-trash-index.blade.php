@@ -33,8 +33,8 @@
                                 <th>Price</th>
                                 <th>Short Description</th>
                                 <th>Description</th>
-                                <th>Image</th>
                                 <th>Category</th>
+                                <th>Image</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -45,8 +45,8 @@
                                 <th>Price</th>
                                 <th>Short Description</th>
                                 <th>Description</th>
-                                <th>Image</th>
                                 <th>Category</th>
+                                <th>Image</th>
                                 <th>Action</th>
                             </tr>
                         </tfoot>
@@ -61,11 +61,11 @@
                                 <td>{{ $item->price }}</td>
                                 <td>{{ $item->short_description}}</td>
                                 <td>{{ $item->description }}</td>
+                                <td>{{ $item->category->title }}</td>
                                 <td>
                                     <img src=" {{ asset('storage/Product_image/'.$item->image) }}"
                                         style="height:50px;width:60px">
                                 </td>
-                                <td>{{ $item->category_id }}</td>
                                 <td>
                                     <form action="{{ route('admin.products.destroy',$item->id) }}" method="POST">
                                         <a class="btn btn-success"

@@ -40,8 +40,8 @@
                                 <th>Old Price</th>
                                 <th>Short Description</th>
                                 <th>Description</th>
-                                <th>Image</th>
                                 <th>Category</th>
+                                <th>Image</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -53,8 +53,8 @@
                                 <th>Old Price</th>
                                 <th>Short Description</th>
                                 <th>Description</th>
-                                <th>Image</th>
                                 <th>Category</th>
+                                <th>Image</th>
                                 <th>Action</th>
                             </tr>
                         </tfoot>
