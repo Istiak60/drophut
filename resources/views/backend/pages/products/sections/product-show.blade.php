@@ -52,7 +52,7 @@
                             <tr>
                                 <th>Image</th>
                                 <td><img src=" {{ asset('storage/Product_image/'.$product->image) }}"
-                                        style="height:200px;width:250px"></td>
+                                        style="height:150px;width:220px"></td>
                             </tr>
                             <tr>
                                 <th>Created at</th>
