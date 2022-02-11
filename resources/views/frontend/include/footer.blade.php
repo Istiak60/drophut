@@ -5,7 +5,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="widgets_container contact_us">
                         <div class="footer_logo">
-                            <a href="#"><img src="asset/frontend/assets/img/logo/logo.png" alt=""></a>
+                            <a href="{{route('home')}}"><img src="asset/frontend/assets/img/logo/logo.png" alt=""></a>
                         </div>
                         <div class="footer_contact">
                             <p>John draw real poor on call my from. May she mrs furnished discourse extremely. Ask doubt noisy shade guest Lose away off why half led have near bed. At engage simple father of period others except</p>
@@ -18,10 +18,10 @@
                         <h3>Information</h3>
                         <div class="footer_menu">
                             <ul>
-                                <li><a href="about.html">About Us</a></li>
-                                <li><a href="blog.html">Delivery Information</a></li>
-                                <li><a href="contact.html">Privacy Policy</a></li>
-                                <li><a href="services.html">Terms & Conditions</a></li>
+                                <li><a href="{{route('about')}}">About Us</a></li>
+                                <li><a href="{{route('blog')}}">Delivery Information</a></li>
+                                <li><a href="{{route('privacy-policy')}}">Privacy Policy</a></li>
+                                <li><a href="{{route('contact')}}">Terms & Conditions</a></li>
                                 <li><a href="#">Returns</a></li>
                                 <li><a href="#">Gift Certificates</a></li>
                             </ul>
@@ -35,10 +35,10 @@
                             <ul>
                                 <li><a href="#">My Account</a></li>
                                 <li><a href="#">Order History</a></li>
-                                <li><a href="wishlist.html">Wish List</a></li>
+                                <li><a href="#">Wish List</a></li>
                                 <li><a href="#">Newsletter</a></li>
                                 <li><a href="#">Affiliate</a></li>
-                                <li><a href="faq.html">International Orders</a></li>
+                                <li><a href="{{route('faq')}}">International Orders</a></li>
                             </ul>
                         </div>
                     </div>
@@ -78,7 +78,7 @@
                 <div class="row align-items-center">
                     <div class="col-lg-6 col-md-6">
                         <div class="copyright_area">
-                            <p> <a href="templateshub.net">Templates Hub</a></p>
+                            <p> <a href="{{route('home')}}">Drophut</a></p>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6">

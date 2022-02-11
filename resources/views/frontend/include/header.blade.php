@@ -19,8 +19,8 @@
                         </div>
                         <div class="top_right text-right">
                             <ul>
-                               <li><a href="my-account.html"> My Account </a></li> 
-                               <li><a href="checkout.html"> Checkout </a></li> 
+                               <li><a href="#"> My Account </a></li> 
+                               <li><a href="{{route('checkout')}}"> Checkout </a></li> 
                             </ul>
                         </div> 
                         <div class="search_container">
@@ -78,10 +78,10 @@
 
                                     <div class="mini_cart_footer">
                                        <div class="cart_button">
-                                            <a href="cart.html">View cart</a>
+                                            <a href="{{route('cart')}}">View cart</a>
                                         </div>
                                         <div class="cart_button">
-                                            <a href="checkout.html">Checkout</a>
+                                            <a href="{{route('checkout')}}">Checkout</a>
                                         </div>
 
                                     </div>
@@ -96,36 +96,24 @@
                                     <a href="#">Home</a>
                                 </li>
                                 <li class="menu-item-has-children">
-                                    <a href="product-details.html">product</a>
-                                </li>
-                                <li class="menu-item-has-children">
                                     <a href="#">pages </a>
                                     <ul class="sub-menu">
-                                        <li><a href="about.html">About Us</a></li>
-										<li><a href="contact.html">contact</a></li>
-										<li><a href="privacy-policy.html">privacy policy</a></li>
-										<li><a href="faq.html">Frequently Questions</a></li>
-										<li><a href="login.html">login</a></li>
-										<li><a href="register.html">register</a></li>
-										<li><a href="forget-password.html">Forget Password</a></li>
-										<li><a href="404.html">Error 404</a></li>
-										<li><a href="cart.html">cart</a></li>
-										<li><a href="tracking.html">tracking</a></li>
-										<li><a href="checkout.html">checkout</a></li>
+                                        <li><a href="{{route('about')}}">About Us</a></li>
+										<li><a href="{{route('contact')}}">contact</a></li>
+										<li><a href="{{route('privacy-policy')}}">privacy policy</a></li>
+										<li><a href="{{route('faq')}}">Frequently Questions</a></li>
+										<li><a href="{{route('404')}}">Error 404</a></li>
+										<li><a href="{{route('cart')}}">cart</a></li>
+										<li><a href="{{route('tracking')}}">tracking</a></li>
+										<li><a href="{{route('checkout')}}">checkout</a></li>
                                     </ul>
                                 </li>
+                                <li><a href="{{route('blog')}}">Blogs</a></li>
                                 <li class="menu-item-has-children">
-                                    <a href="#">blog</a>
-                                    <ul class="sub-menu">
-                                        <li><a href="blog.html">blog</a></li>
-                                        <li><a href="blog-details.html">blog details</a></li>
-                                    </ul>
+                                    <a href="#">my account</a>
                                 </li>
                                 <li class="menu-item-has-children">
-                                    <a href="login.html">my account</a>
-                                </li>
-                                <li class="menu-item-has-children">
-                                    <a href="contact.html"> Contact Us</a> 
+                                    <a href="{{route('contact')}}"> Contact Us</a> 
                                 </li>
                             </ul>
                         </div>
@@ -161,8 +149,8 @@
                         <div class="col-lg-6 col-md-6">
                             <div class="top_right text-right">
                                 <ul>
-                                   <li><a href="my-account.html">Account</a></li> 
-                                   <li><a href="checkout.html">Checkout</a></li> 
+                                   <li><a href="#">Account</a></li> 
+                                   <li><a href="{{route('checkout')}}">Checkout</a></li> 
                                 </ul>
                             </div>   
                         </div>
@@ -176,7 +164,7 @@
                     <div class="row align-items-center">
                         <div class="col-lg-3 col-md-6">
                             <div class="logo">
-                                <a href="index-2.html"><img src="asset/frontend/assets/img/logo/logo.png" alt=""></a>
+                                <a href="{{route('home')}}"><img src="asset/frontend/assets/img/logo/logo.png" alt=""></a>
                             </div>
                         </div>
                         <div class="col-lg-9 col-md-6">
@@ -235,10 +223,10 @@
 
                                             <div class="mini_cart_footer">
                                                <div class="cart_button">
-                                                    <a href="cart.html">View cart</a>
+                                                    <a href="{{route('cart')}}">View cart</a>
                                                 </div>
                                                 <div class="cart_button">
-                                                    <a href="checkout.html">Checkout</a>
+                                                    <a href="{{route('checkout')}}">Checkout</a>
                                                 </div>
 
                                             </div>
@@ -261,31 +249,21 @@
                             <div class="main_menu menu_position"> 
                                 <nav>  
                                     <ul>
-                                        <li><a href="index-2.html">home</a></li>
-                                        <li><a href="product-details.html">Product</a></li>
-                                        
+                                        <li><a href="{{route('home')}}">home</a></li>
                                         <li><a class="active" href="#">pages <i class="fa fa-angle-down"></i></a>
                                             <ul class="sub_menu pages">
-                                                <li><a href="about.html">About Us</a></li>
-                                                <li><a href="contact.html">contact</a></li>
-                                                <li><a href="privacy-policy.html">privacy policy</a></li>
-                                                <li><a href="faq.html">Frequently Questions</a></li>
-                                                <li><a href="login.html">login</a></li>
-                                                <li><a href="register.html">register</a></li>
-                                                <li><a href="forget-password.html">Forget Password</a></li>
-                                                <li><a href="404.html">Error 404</a></li>
-                                                <li><a href="cart.html">cart</a></li>
-                                                <li><a href="tracking.html">tracking</a></li>
-                                                <li><a href="checkout.html">checkout</a></li>
+                                                <li><a href="{{route('about')}}">About Us</a></li>
+                                                <li><a href="{{route('contact')}}">contact</a></li>
+                                                <li><a href="{{route('privacy-policy')}}">privacy policy</a></li>
+                                                <li><a href="{{route('faq')}}">Frequently Questions</a></li>
+                                                <li><a href="{{route('404')}}">Error 404</a></li>
+                                                <li><a href="{{route('cart')}}">cart</a></li>
+                                                <li><a href="{{route('tracking')}}">tracking</a></li>
+                                                <li><a href="{{route('checkout')}}">checkout</a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="blog.html">blog<i class="fa fa-angle-down"></i></a>
-                                            <ul class="sub_menu pages">
-                                                <li><a href="blog.html">blog</a></li>
-                                                <li><a href="blog-details.html">blog details</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="contact.html"> Contact Us</a></li>
+                                        <li><a href="{{route('blog')}}">Blogs</a></li>
+                                        <li><a href="{{route('contact')}}"> Contact Us</a></li>
                                     </ul>  
                                 </nav> 
                             </div>

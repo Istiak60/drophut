@@ -5,7 +5,7 @@
             <div class="col-12">
                 <div class="breadcrumb_content">
                     <ul>
-                        <li><a href="index-2.html">home</a></li>
+                        <li><a href="{{route('home')}}">home</a></li>
                         <li>FAQ page</li>
                     </ul>
                 </div>
