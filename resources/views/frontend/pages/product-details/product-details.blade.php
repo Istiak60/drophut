@@ -9,32 +9,14 @@
                    <div class="product-details-tab">
                         <div id="img-1" class="zoomWrapper single-zoom">
                             <a href="#">
-                                <img id="zoom1" src="asset/frontend/assets/img/product/details-1.jpg" data-zoom-image="asset/frontend/assets/img/product/details-1.jpg" alt="big-1">
+                                <img id="zoom1" src="{{ asset('storage/Product_image/'.$product->image) }}" data-zoom-image="{{ asset('storage/Product_image/'.$product->image) }}" alt="{{ $product->image }}">
                             </a>
                         </div>
                         <div class="single-zoom-thumb">
                             <ul class="s-tab-zoom owl-carousel single-product-active" id="gallery_01">
-                                <li>
-                                    <a href="#" class="elevatezoom-gallery active" data-update="" data-image="asset/frontend/assets/img/product/details-2.jpg" data-zoom-image="asset/frontend/assets/img/product/details-2.jpg">
-                                        <img src="asset/frontend/assets/img/product/details-2.jpg" alt="zo-th-1"/>
-                                    </a>
-
-                                </li>
                                 <li >
-                                    <a href="#" class="elevatezoom-gallery active" data-update="" data-image="asset/frontend/assets/img/product/details-3.jpg" data-zoom-image="asset/frontend/assets/img/product/details-3.jpg">
-                                        <img src="asset/frontend/assets/img/product/details-3.jpg" alt="zo-th-1"/>
-                                    </a>
-
-                                </li>
-                                <li >
-                                    <a href="#" class="elevatezoom-gallery active" data-update="" data-image="asset/frontend/assets/img/product/details-4.jpg" data-zoom-image="asset/frontend/assets/img/product/details-4.jpg">
-                                        <img src="asset/frontend/assets/img/product/details-4.jpg" alt="zo-th-1"/>
-                                    </a>
-
-                                </li>
-                                <li >
-                                    <a href="#" class="elevatezoom-gallery active" data-update="" data-image="asset/frontend/assets/img/product/details-1.jpg" data-zoom-image="asset/frontend/assets/img/product/details-1.jpg">
-                                        <img src="asset/frontend/assets/img/product/details-1.jpg" alt="zo-th-1"/>
+                                    <a href="#" class="elevatezoom-gallery active" data-update="" data-image="{{ asset('storage/Product_image/'.$product->image) }}" data-zoom-image="{{ asset('storage/Product_image/'.$product->image) }}">
+                                        <img src="{{ asset('storage/Product_image/'.$product->image) }}" alt="{{ $product->image }}"/>
                                     </a>
 
                                 </li>
@@ -45,8 +27,7 @@
                 <div class="col-lg-6 col-md-6">
                     <div class="product_d_right">
                        <form action="#">
-                           
-                            <h1>Fancy Chair for astron floor</h1>
+                            <h1>{{ $product->title }}</h1>
                             <div class=" product_ratting">
                                 <ul>
                                     <li><a href="#"><i class="fa fa-star"></i></a></li>
@@ -59,8 +40,8 @@
                                 
                             </div>
                             <div class="price_box">
-                                <span class="current_price">$70.00</span>
-                                <span class="old_price">$80.00</span>
+                                <span class="current_price">${{ $product->price }}</span>
+                                <span class="old_price">${{ $product->old_price }}</span>
                                 
                             </div>
                             <div class="product_desc">
@@ -69,7 +50,7 @@
                                     <li>Free delivery available*</li>
                                     <li>Sale 30% Off Use Code : 'Drophut'</li>
                                 </ul>
-                                <p>eget velit. Donec ac tempus ante. Fusce ultricies massa massa. Fusce aliquam, purus eget sagittis vulputate, sapien libero hendrerit est, sed commodo augue nisi non neque. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempor, lorem et placerat vestibulum, metus nisi posuere nisl, in </p>
+                                <p>{{ $product->short_description }}</p>
                             </div>
 							<div class="product_timing">
                                 <div data-countdown="2023/12/15"></div>
@@ -97,7 +78,7 @@
                                </ul>
                             </div>
                             <div class="product_meta">
-                                <span>Category: <a href="#">Clothing</a></span>
+                                <span>Category: {{ $product->category_id }}</span>
                             </div>
                             
                         </form>
@@ -140,8 +121,7 @@
                         <div class="tab-content">
                             <div class="tab-pane fade show active" id="info" role="tabpanel" >
                                 <div class="product_info_content">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue nec est tristique auctor. Donec non est at libero vulputate rutrum. Morbi ornare lectus quis justo gravida semper. Nulla tellus mi, vulputate adipiscing cursus eu, suscipit id nulla.</p>
-                                    <p>Pellentesque aliquet, sem eget laoreet ultrices, ipsum metus feugiat sem, quis fermentum turpis eros eget velit. Donec ac tempus ante. Fusce ultricies massa massa. Fusce aliquam, purus eget sagittis vulputate, sapien libero hendrerit est, sed commodo augue nisi non neque. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempor, lorem et placerat vestibulum, metus nisi posuere nisl, in accumsan elit odio quis mi. Cras neque metus, consequat et blandit et, luctus a nunc. Etiam gravida vehicula tellus, in imperdiet ligula euismod eget.</p>
+                                    <p>{{ $product->description }}</p>
                                 </div>    
                             </div>
                             <div class="tab-pane fade" id="sheet" role="tabpanel" >

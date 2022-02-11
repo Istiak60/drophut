@@ -34,11 +34,11 @@
                                 <td>{{ $product->price}}</td>
                             </tr>
                             <tr>
-
+                                <th>Old Price</th>
+                                <td>{{ $product->old_price}}</td>
+                            </tr>
+                            <tr>
                                 <th>Short_description</th>
-
-                                <th>Short Description</th>
-
                                 <td>{{ $product->short_description}}</td>
                             </tr>
                             <tr>
@@ -51,7 +51,8 @@
                             </tr>
                             <tr>
                                 <th>Image</th>
-                                <td><img src=" {{ asset('storage/Product_image/'.$product->image) }}" style="height:200px;width:250px"></td>
+                                <td><img src=" {{ asset('storage/Product_image/'.$product->image) }}"
+                                        style="height:200px;width:250px"></td>
                             </tr>
                             <tr>
                                 <th>Created at</th>

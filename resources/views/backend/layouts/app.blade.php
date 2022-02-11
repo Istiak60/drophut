@@ -10,7 +10,8 @@
     <meta name="author" content="" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    {{-- <title>{{ config('app.name', 'Laravel') }}</title> --}}
+    <title>Drophut-Admin</title>
     @include('backend.include.styles')
 </head>
 

@@ -38,6 +38,16 @@
                             </div>
                             <div class="col-md-6 mb-3">
                                 <div class="form-floating mb-3 mb-md-0">
+                                    <input class="form-control @error('old_price') is-invalid @enderror" id="inputOldPrice"
+                                        name="old_price" value="{{ $product->old_price }}" type="text" />
+                                    <label for="inputOldPrice">Old Price</label>
+                                    @error('old_price')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="form-floating mb-3 mb-md-0">
                                     <input class="form-control @error('short_description') is-invalid @enderror"
                                         id="inputShortDescription" name="short_description"
                                         value="{{ $product->short_description }}" type="text" />

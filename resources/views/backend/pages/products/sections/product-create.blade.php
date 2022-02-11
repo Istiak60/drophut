@@ -37,6 +37,16 @@
                             </div>
                             <div class="col-md-6 mb-3">
                                 <div class="form-floating mb-3 mb-md-0">
+                                    <input class="form-control @error('old_price') is-invalid @enderror"
+                                        id="inputOldPrice" name="old_price" type="text" />
+                                    <label for="inputOldPrice">Old Price</label>
+                                    @error('old_price')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="form-floating mb-3 mb-md-0">
                                     <input class="form-control @error('short_description') is-invalid @enderror"
                                         id="inputShortDescription" name="short_description" type="text" />
                                     <label for="inputShortDescription">ShortDescription</label>
@@ -62,9 +72,11 @@
                                 <select class="form-control @error('category_id') is-invalid @enderror"
                                     name="category_id" id="category_id">
                                     <option value="">Select Please</option>
-                                    <option value="Phone" {{ (old('category_id'))==1 ? 'selected' : '' }}>Phone</option>
-                                    <option value="tv" {{ (old('category_id'))==2 ? 'selected' : '' }}>Tv</option>
-                                    <option value="watch" {{ (old('category_id'))==3 ? 'selected' : '' }}>Watch</option>
+                                    <option value="Phone" {{ (old('category_id'))=="phone" ? 'selected' : '' }}>Phone
+                                    </option>
+                                    <option value="tv" {{ (old('category_id'))=="tv" ? 'selected' : '' }}>Tv</option>
+                                    <option value="watch" {{ (old('category_id'))=="watch" ? 'selected' : '' }}>Watch
+                                    </option>
                                 </select>
                                 @error('category_id')
                                 <span class="invalid-feedback" role="alert">
