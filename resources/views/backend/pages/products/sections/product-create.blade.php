@@ -72,11 +72,11 @@
                                 <select class="form-control @error('category_id') is-invalid @enderror"
                                     name="category_id" id="category_id">
                                     <option value="">Select Please</option>
-                                    <option value="Phone" {{ (old('category_id'))=="phone" ? 'selected' : '' }}>Phone
-                                    </option>
-                                    <option value="tv" {{ (old('category_id'))=="tv" ? 'selected' : '' }}>Tv</option>
-                                    <option value="watch" {{ (old('category_id'))=="watch" ? 'selected' : '' }}>Watch
-                                    </option>
+                                    @foreach ($categories as $category)
+                                    <option value="{{ $category->id }}"
+                                        {{ (old('category_id'))== "$category->id" ? 'selected' : '' }}>
+                                        {{ $category->title }}</option>
+                                    @endforeach
                                 </select>
                                 @error('category_id')
                                 <span class="invalid-feedback" role="alert">

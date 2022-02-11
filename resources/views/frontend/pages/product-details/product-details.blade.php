@@ -78,7 +78,7 @@
                                </ul>
                             </div>
                             <div class="product_meta">
-                                <span>Category: {{ $product->category_id }}</span>
+                                <span>Category: {{ $product->category->title }}</span>
                             </div>
                             
                         </form>

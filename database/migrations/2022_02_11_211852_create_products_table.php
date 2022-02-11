@@ -21,12 +21,10 @@ class CreateProductsTable extends Migration
             $table->longText('short_description');
             $table->longText('description');
             $table->string('image');
-            $table->string('category_id');
+            $table->unsignedBigInteger('category_id');
+            $table->foreign('category_id')->references('id')->on('categories');
             $table->enum('trash',['0','1'])->default('0')->comment="0=not trashed,1=trashed";
-
-
             $table->timestamps();
-            
         });
     }
 

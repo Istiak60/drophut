@@ -70,11 +70,11 @@
                                 <td>{{ $item->old_price }}</td>
                                 <td>{{ $item->short_description}}</td>
                                 <td>{{ $item->description }}</td>
+                                <td>{{ $item->category->title }}</td>
                                 <td>
                                     <img src=" {{ asset('storage/Product_image/'.$item->image) }}"
                                         style="height:50px;width:60px">
                                 </td>
-                                <td>{{ $item->category_id }}</td>
                                 <td>
                                     <form action="{{ route('admin.products.destroy',$item->id) }}" method="POST">
                                         <a class="btn btn-info"

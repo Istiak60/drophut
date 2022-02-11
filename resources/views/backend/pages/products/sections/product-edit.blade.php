@@ -12,7 +12,8 @@
                     Update a categoty item
                 </div>
                 <div class="card-body">
-                    <form action="{{ route('admin.products.update', $product->id) }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('admin.products.update', $product->id) }}" method="POST"
+                        enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
                         <div class="row mb-3">
@@ -38,8 +39,9 @@
                             </div>
                             <div class="col-md-6 mb-3">
                                 <div class="form-floating mb-3 mb-md-0">
-                                    <input class="form-control @error('old_price') is-invalid @enderror" id="inputOldPrice"
-                                        name="old_price" value="{{ $product->old_price }}" type="text" />
+                                    <input class="form-control @error('old_price') is-invalid @enderror"
+                                        id="inputOldPrice" name="old_price" value="{{ $product->old_price }}"
+                                        type="text" />
                                     <label for="inputOldPrice">Old Price</label>
                                     @error('old_price')
                                     <div class="alert alert-danger">{{ $message }}</div>
@@ -75,11 +77,11 @@
                                 <select class="form-control @error('category_id') is-invalid @enderror"
                                     name="category_id" id="category_id">
                                     <option value="">Select Please</option>
-                                    <option value="Phone" {{ ($product->category_id)=="phone" ? 'selected' : '' }}>Phone
-                                    </option>
-                                    <option value="tv" {{ ($product->category_id)=="tv" ? 'selected' : '' }}>Tv</option>
-                                    <option value="watch" {{ ($product->category_id)=="watch" ? 'selected' : '' }}>Watch
-                                    </option>
+                                    @foreach ($categories as $category)
+                                    <option value="{{ $category->id }}"
+                                        {{ ($product->category_id)== "$category->id" ? 'selected' : '' }}>
+                                        {{ $category->title }}</option>
+                                    @endforeach
                                 </select>
                                 @error('category_id')
                                 <span class="invalid-feedback" role="alert">
@@ -98,7 +100,7 @@
                             </div>
                         </div>
                         <div class="mt-4 mb-0">
-                            <div class="d-grid"><button class="btn btn-outline-primary btn-block" type="submit">Create a
+                            <div class="d-grid"><button class="btn btn-outline-primary btn-block" type="submit">Update a
                                     Product</button></div>
                         </div>
                     </form>
