@@ -17,17 +17,12 @@ class HomeController extends Controller
       
         $blogs = Blog::all()->where('trash','0');
         
-        $data = [
-            'title' => 'Home'
-        ];
-        return view('frontend.pages.home.index', $data, compact('products','blogs'));
-
         $sliders = Slider::all()->where('trash','0');
 
         $data = [
             'title' => 'Home'
         ];
       
-        return view('frontend.pages.home.index', $data, compact('products','sliders'));
+        return view('frontend.pages.home.index', $data, compact('products','sliders','blogs'));
     }
 }
