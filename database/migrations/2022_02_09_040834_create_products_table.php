@@ -17,12 +17,11 @@ class CreateProductsTable extends Migration
             $table->id();
             $table->string('title');
             $table->float('price');
-            $table->string('short_description');
-            $table->string('description');
-            
+            $table->float('old_price');
+            $table->longText('short_description');
+            $table->longText('description');
             $table->string('image');
             $table->string('category_id');
-
             $table->enum('trash',['0','1'])->default('0')->comment="0=not trashed,1=trashed";
 
 

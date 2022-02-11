@@ -49,6 +49,7 @@ class ProductController extends Controller
         $data = $request->validate([
             'title'             => 'required',
             'price'             => 'required',
+            'old_price'         => 'required',
             'short_description' => 'required',
             'description'       => 'required',
             'image'             => 'required|mimes:jpg,jpeg,png',
@@ -102,6 +103,7 @@ class ProductController extends Controller
         $data = $request->validate([
             'title'             => 'required',
             'price'             => 'required',
+            'old_price'         => 'required',
             'short_description' => 'required',
             'description'       => 'required',
             'image'             => 'required',

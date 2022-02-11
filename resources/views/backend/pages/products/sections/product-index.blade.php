@@ -37,6 +37,7 @@
                                 <th>SL</th>
                                 <th>Title</th>
                                 <th>Price</th>
+                                <th>Old Price</th>
                                 <th>Short Description</th>
                                 <th>Description</th>
                                 <th>Image</th>
@@ -49,6 +50,7 @@
                                 <th>SL</th>
                                 <th>Title</th>
                                 <th>Price</th>
+                                <th>Old Price</th>
                                 <th>Short Description</th>
                                 <th>Description</th>
                                 <th>Image</th>
@@ -65,6 +67,7 @@
                                 <td>{{ $i++ }}</td>
                                 <td>{{ $item->title }}</td>
                                 <td>{{ $item->price }}</td>
+                                <td>{{ $item->old_price }}</td>
                                 <td>{{ $item->short_description}}</td>
                                 <td>{{ $item->description }}</td>
                                 <td>

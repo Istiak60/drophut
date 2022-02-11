@@ -13,28 +13,23 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('home','Frontend\HomeController@index');
-
-Route::get('product-details','Frontend\ProductdetailsController@index');
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 
-Route::get('404','Frontend\ErrorController@index');
-Route::get('about','Frontend\AboutController@index');
-Route::get('blog-details','Frontend\BlogDetailController@index');
-Route::get('blog','Frontend\BlogController@index');
-Route::get('cart','Frontend\CartController@index');
-Route::get('checkout','Frontend\CheckoutController@index');
-Route::get('contact','Frontend\ContactController@index');
-Route::get('faq','Frontend\FAQController@index');
-
-
-
-
-Route::get('tracking','Frontend\TrackingController@index');
-Route::get('privacy-policy','Frontend\PrivacypolicyController@index');
+Route::get('/','Frontend\HomeController@index')->name('home');
+Route::get('product-details/{id}','Frontend\ProductdetailsController@show')->name('product.details');
+Route::get('404','Frontend\ErrorController@index')->name('404');
+Route::get('about','Frontend\AboutController@index')->name('about');
+Route::get('blog-details','Frontend\BlogDetailController@index')->name('blog-details');
+Route::get('blog','Frontend\BlogController@index')->name('blog');
+Route::get('cart','Frontend\CartController@index')->name('cart');
+Route::get('checkout','Frontend\CheckoutController@index')->name('checkout');
+Route::get('contact','Frontend\ContactController@index')->name('contact');
+Route::get('faq','Frontend\FAQController@index')->name('faq');
+Route::get('tracking','Frontend\TrackingController@index')->name('tracking');
+Route::get('privacy-policy','Frontend\PrivacypolicyController@index')->name('privacy-policy');
 
 
 
@@ -59,6 +54,6 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function(){
 });
 
 Route::get('categories/trash','Backend\CategoryController@trash_index')->name('categories.trash.index');
-Route::get('products/trash','Backend\CategoryController@trash_index')->name('products.trash.index');
+Route::get('products/trash','Backend\ProductController@trash_index')->name('products.trash.index');
 Route::get('slider/trash','Backend\SliderController@trash_index')->name('sliders.trash.index');
 

@@ -2,7 +2,6 @@
  <div class="blog_details mt-60">
      <div class="container">
          <div class="row">
-
              <div class="col-lg-9 col-md-12">
                  <!--blog grid area start-->
                  <div class="blog_wrapper">
@@ -167,7 +166,8 @@
                          <h3>Recent Posts</h3>
                          <div class="post_wrapper">
                              <div class="post_thumb">
-                                 <a href="blog-details.html"><img src="asset/frontend/assets/img/blog/blog1.jpg" alt=""></a>
+                                 <a href="blog-details.html"><img src="asset/frontend/assets/img/blog/blog1.jpg"
+                                         alt=""></a>
                              </div>
                              <div class="post_info">
                                  <h3><a href="blog-details.html">Blog image post</a></h3>
@@ -176,7 +176,8 @@
                          </div>
                          <div class="post_wrapper">
                              <div class="post_thumb">
-                                 <a href="blog-details.html"><img src="asset/frontend/assets/img/blog/blog2.jpg" alt=""></a>
+                                 <a href="blog-details.html"><img src="asset/frontend/assets/img/blog/blog2.jpg"
+                                         alt=""></a>
                              </div>
                              <div class="post_info">
                                  <h3><a href="blog-details.html">Post with Gallery</a></h3>
@@ -185,7 +186,8 @@
                          </div>
                          <div class="post_wrapper">
                              <div class="post_thumb">
-                                 <a href="blog-details.html"><img src="asset/frontend/assets/img/blog/blog1.jpg" alt=""></a>
+                                 <a href="blog-details.html"><img src="asset/frontend/assets/img/blog/blog1.jpg"
+                                         alt=""></a>
                              </div>
                              <div class="post_info">
                                  <h3><a href="blog-details.html">Post with Audio</a></h3>
