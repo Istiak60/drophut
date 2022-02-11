@@ -12,7 +12,8 @@
                     Update a Blog item
                 </div>
                 <div class="card-body">
-                    <form action="{{ route('admin.blogs.update', $blog->id) }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('admin.blogs.update', $blog->id) }}" method="POST"
+                        enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
                         <div class="row mb-3">
@@ -29,10 +30,10 @@
                             </div>
                             <div class="col-md-6 mb-3">
                                 <div class="form-floating mb-3 mb-md-0">
-                                    <input class="form-control @error('posted_by') is-invalid @enderror" id="inputPostedBy"
-                                        name="posted_by" value="{{ $blog->posted_by }}" type="text"
+                                    <input class="form-control @error('posted_by') is-invalid @enderror"
+                                        id="inputPostedBy" name="posted_by" value="{{ $blog->posted_by }}" type="text"
                                         placeholder="Enter your posted_by" />
-                                    <label for="inputPostedBy">PostedBy</label>
+                                    <label for="inputPostedBy">Posted By</label>
                                     @error('posted_by')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
@@ -40,28 +41,26 @@
                             </div>
                             <div class="col-md-6 mb-3">
                                 <div class="form-floating mb-3 mb-md-0">
-                                    <input class="form-control  @error('short_description') is-invalid @enderror" id="inputShortDescription"
-                                        name="short_description" value="{{ $blog->short_description }}" type="text"
+                                    <input class="form-control  @error('short_description') is-invalid @enderror"
+                                        id="inputShortDescription" name="short_description"
+                                        value="{{ $blog->short_description }}" type="text"
                                         placeholder="Enter your ShortDescription" />
-                                    <label for="inputShortDescription">ShortDescription</label>
+                                    <label for="inputShortDescription">Short Description</label>
                                     @error('short_description')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
                                 </div>
                             </div>
-
                             <div class="col-md-6 mb-3">
                                 <div class="form-floating mb-3 mb-md-0">
-                                    <input class="form-control" id="inputImage" name="image" type="file" value="{{ $blog->image }}"/>
+                                    <input class="form-control" id="inputImage" name="image" type="file"
+                                        value="{{ $blog->image }}" />
                                     <label class="mb-3" for="inputImage">Image</label>
                                     @error('image')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
                                 </div>
                             </div>
-
-
-
                         </div>
                         <div class="mt-4 mb-0">
                             <div class="d-grid"><button class="btn btn-outline-primary btn-block" type="submit">Update a

@@ -27,9 +27,9 @@
                             </div>
                             <div class="col-md-6 mb-3">
                                 <div class="form-floating mb-3 mb-md-0">
-                                    <input class="form-control @error('posted_by') is-invalid @enderror" id="inputPostedBy"
-                                        name="posted_by" type="text" />
-                                    <label for="inputPostedBy">PostedBy</label>
+                                    <input class="form-control @error('posted_by') is-invalid @enderror"
+                                        id="inputPostedBy" name="posted_by" type="text" />
+                                    <label for="inputPostedBy">Posted By</label>
                                     @error('posted_by')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
@@ -39,16 +39,12 @@
                                 <div class="form-floating mb-3 mb-md-0">
                                     <input class="form-control @error('short_description') is-invalid @enderror"
                                         id="inputShortDescription" name="short_description" type="text" />
-                                    <label for="inputShortDescription">ShortDescription</label>
+                                    <label for="inputShortDescription">Short Description</label>
                                     @error('short_description')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
                                 </div>
                             </div>
-
-
-
-                        
                             <div class="col-md-6 mb-3">
                                 <div class="form-floating mb-3 mb-md-0">
                                     <input class="form-control" id="inputImage" name="image" type="file" />

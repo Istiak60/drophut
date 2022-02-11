@@ -30,18 +30,18 @@
                                 <td>{{ $blog->title }}</td>
                             </tr>
                             <tr>
-                                <th>PostedBy</th>
+                                <th>Posted By</th>
                                 <td>{{ $blog->posted_by}}</td>
                             </tr>
                             <tr>
-                                <th>ShortDescription</th>
+                                <th>Short Description</th>
                                 <td>{{ $blog->short_description}}</td>
                             </tr>
                             <tr>
                                 <th>Image</th>
-                                <td> <img src=" {{ asset('storage/Blog_image/'.$blog->image) }}" style="height:50px;width:60px">
-</td>
-                                
+                                <td> <img src=" {{ asset('storage/Blog_image/'.$blog->image) }}"
+                                        style="height:150px;width:220px">
+                                </td>
                             </tr>
                             <tr>
                                 <th>Created at</th>

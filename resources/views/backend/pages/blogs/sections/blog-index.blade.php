@@ -13,12 +13,12 @@
                 </div>
                 <div class="card-body">
                     <div class="d-flex mb-3">
-                    <div class="mr-3">
-                        <a class="btn btn-success" href="{{ route('admin.blogs.create') }}">Create New Blog</a>
-                    </div>
-                    <div class="">
-                        <a class="btn btn-warning" href="{{ route('blogs.trash.index') }}">Trash</a>
-                    </div>
+                        <div class="mr-3">
+                            <a class="btn btn-success" href="{{ route('admin.blogs.create') }}">Create New Blog</a>
+                        </div>
+                        <div class="">
+                            <a class="btn btn-warning" href="{{ route('blogs.trash.index') }}">Trash</a>
+                        </div>
                     </div>
                     @if ($message = Session::get('success'))
                     <div class="alert alert-success mt-3">
@@ -35,18 +35,18 @@
                             <tr>
                                 <th>SL</th>
                                 <th>Title</th>
-                                <th>PostedBy</th>
-                                <th>ShortDescription</th>
-                                <th>Image</th>               
+                                <th>Posted By</th>
+                                <th>Short Description</th>
+                                <th>Image</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
                         <tfoot>
                             <tr>
-                                  <th>SL</th>
+                                <th>SL</th>
                                 <th>Title</th>
-                               <th>PostedBy</th>
-                                <th>ShortDescription</th>
+                                <th>Posted By</th>
+                                <th>Short Description</th>
                                 <th>Image</th>
                                 <th>Action</th>
                             </tr>
@@ -62,9 +62,10 @@
                                 <td>{{ $item->posted_by }}</td>
                                 <td>{{ $item->short_description}}</td>
                                 <td>
-                                <img src=" {{ asset('storage/Blog_image/'.$item->image) }}" style="height:50px;width:60px">
-                               </td>
-                                
+                                    <img src=" {{ asset('storage/Blog_image/'.$item->image) }}"
+                                        style="height:50px;width:60px">
+                                </td>
+
                                 <td>
                                     <form action="{{ route('admin.blogs.destroy',$item->id) }}" method="POST">
                                         <a class="btn btn-info"

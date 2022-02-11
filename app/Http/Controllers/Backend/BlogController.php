@@ -129,7 +129,7 @@ class BlogController extends Controller
     {
         $blog->delete();
     
-        return redirect()->to('blog/trash')->with('danger','Item deleted successfully');
+        return redirect()->to('blogs/trash')->with('danger','Item deleted successfully');
     }
 
     public function trash($id)
