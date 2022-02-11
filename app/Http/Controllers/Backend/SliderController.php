@@ -53,18 +53,12 @@ class SliderController extends Controller
             'image' => 'required',
            
         ]);
+        
         $file =  $request->file('image');
-      
-        $fileName = $file->getClientOriginalName();
-        $fileExtension = $file->getClientOriginalExtension();
-        $uploadName = $fileName.'.'.$fileExtension;
-
-       $file->storeAs('public/Slider_Image',$uploadName);
+        $uploadName = $this->fileUpload($file);
 
         $slider = new Slider($request->all());
         $slider->image = $uploadName;
-
-        
 
         if ($slider->save()) {
             return redirect()->route('admin.sliders.index')->with('success','Item added successfully');
@@ -129,7 +123,7 @@ class SliderController extends Controller
     {
         $slider->delete();
     
-        return redirect()->to('slider/trash')->with('danger','Item deleted successfully');
+        return redirect()->to('sliders/trash')->with('danger','Item deleted successfully');
     }
 
     public function trash($id)
