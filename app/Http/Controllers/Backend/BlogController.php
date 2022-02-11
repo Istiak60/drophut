@@ -46,11 +46,11 @@ class BlogController extends Controller
     public function store(Request $request)
     {
         $data = $request->validate([
-            'title' => 'required',
-            'posted_by' => 'required',
+            'title'             => 'required',
+            'posted_by'         => 'required',
             'short_description' => 'required',
-          
-            'image' => 'required',
+            'description'       => 'required',
+            'image'             => 'required',
            
         ]);
         $file =  $request->file('image');
@@ -103,10 +103,11 @@ class BlogController extends Controller
     public function update(Request $request, Blog $blog)
     {
         $request->validate([
-            'title' => 'required',
-            'posted_by' => 'required',
+            'title'             => 'required',
+            'posted_by'         => 'required',
             'short_description' => 'required',
-            'image' => 'required',
+            'description'       => 'required',
+            'image'             => 'required',
         ]);
 
         $picture = $this->fileUpload($request->file('image'));

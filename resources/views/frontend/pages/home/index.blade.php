@@ -76,21 +76,21 @@
             </div>
         </div>
         <div class="row justify-content-center">
-            @foreach ($products as $item)
+            @foreach ($products as $product)
             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">
                 <div class="single-tranding">
-                    <a href="{{ route('product.details',$item->id) }}">
+                    <a href="{{ route('product.details',$product->id) }}">
                         <div class="tranding-pro-img">
-                            <img src="{{ asset('storage/Product_image/'.$item->image) }}" alt="">
+                            <img src="{{ asset('storage/Product_image/'.$product->image) }}" alt="">
                         </div>
                         <div class="tranding-pro-title">
-                            <h3>{{ $item->title }}</h3>
+                            <h3>{{ $product->title }}</h3>
                             <h4>Drone</h4>
                         </div>
                         <div class="tranding-pro-price">
                             <div class="price_box">
-                                <span class="current_price">${{ $item->price }}</span>
-                                <span class="old_price">${{ $item->old_price }}</span>
+                                <span class="current_price">${{ $product->price }}</span>
+                                <span class="old_price">${{ $product->old_price }}</span>
                             </div>
                         </div>
                     </a>
@@ -211,79 +211,31 @@
             </div>
         </div>
         <div class="row blog_wrapper">
+            @foreach ($blogs as $blog)
             <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
                 <article class="single_blog mb-60">
                     <figure>
                         <div class="blog_thumb">
-                            <a href="blog-details.html"><img src="asset/frontend/assets/img/blog/blog2.jpg" alt=""></a>
+                            <a href="{{ route('blog-details',$blog->id) }}"><img
+                                    src="{{ asset('storage/Blog_image/'.$blog->image) }}" alt="{{ $blog->image }}"></a>
                         </div>
                         <figcaption class="blog_content">
-                            <h3><a href="blog-details.html">How to start drone</a></h3>
+                            <h3><a href="{{ route('blog-details',$blog->id) }}">{{ $blog->title }}</a></h3>
                             <div class="blog_meta">
-                                <span class="author">Posted by : <a href="#">Rahul</a> / </span>
-                                <span class="post_date"><a href="#">Sep 20, 2019</a></span>
+                                <span class="author">Posted by : {{ $blog->posted_by }} / </span>
+                                <span class="post_date">Sep 20, 2019</span>
                             </div>
                             <div class="blog_desc">
-                                <p>It is a long established fact that a reader will be distracted by the readable
-                                    content of a page when looking at its layout. The point of using Lorem Ipsum is that
-                                    it has a more-or-less</p>
+                                <p>{{ $blog->short_description }}</p>
                             </div>
                             <footer class="readmore_button">
-                                <a href="blog-details.html">read more</a>
+                                <a href="{{ route('blog-details',$blog->id) }}">read more</a>
                             </footer>
                         </figcaption>
                     </figure>
                 </article>
             </div>
-            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
-                <article class="single_blog blog_bidio mb-60">
-                    <figure>
-                        <div class="blog_thumb">
-                            <a href="blog-details.html"><img src="asset/frontend/assets/img/blog/blog1.jpg" alt=""></a>
-                        </div>
-                        <figcaption class="blog_content">
-                            <h3><a href="blog-details.html">See the tutorial</a></h3>
-                            <div class="blog_meta">
-                                <span class="author">Posted by : <a href="#">Rahul</a> / </span>
-                                <span class="post_date">On : <a href="#">Aug 25, 2019</a></span>
-                            </div>
-                            <div class="blog_desc">
-                                <p>It is a long established fact that a reader will be distracted by the readable
-                                    content of a page when looking at its layout. The point of using Lorem Ipsum is that
-                                    it has a more-or-less</p>
-                            </div>
-                            <footer class="readmore_button">
-                                <a href="blog-details.html">read more</a>
-                            </footer>
-                        </figcaption>
-                    </figure>
-                </article>
-            </div>
-            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
-                <article class="single_blog mb-60">
-                    <figure>
-                        <div class="blog_thumb">
-                            <a href="blog-details.html"><img src="asset/frontend/assets/img/blog/blog-details.jpg"
-                                    alt=""></a>
-                        </div>
-                        <figcaption class="blog_content">
-                            <h3><a href="blog-details.html">How to start drone</a></h3>
-                            <div class="blog_meta">
-                                <span class="author">Posted by : <a href="#">Rahul</a> / </span>
-                                <span class="post_date"><a href="#">Sep 20, 2019</a></span>
-                            </div>
-                            <div class="blog_desc">
-                                <p>It is a long established fact that a reader will be distracted by the readable
-                                    content of a page when looking at its layout. The point of using Lorem Ipsum is that
-                                    it has a more-or-less</p>
-                            </div>
-                            <footer class="readmore_button">
-                                <a href="blog-details.html">read more</a>
-                            </footer>
-                        </figcaption>
-                    </figure>
-                </article>
-            </div>
+            @endforeach
         </div>
     </div>
 </section>
@@ -323,21 +275,21 @@
             </div>
         </div>
         <div class="row justify-content-center">
-            @foreach ($products as $item)
+            @foreach ($products as $product)
             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">
                 <div class="single-tranding">
-                    <a href="{{ route('product.details',$item->id) }}">
+                    <a href="{{ route('product.details',$product->id) }}">
                         <div class="tranding-pro-img">
-                            <img src="{{ asset('storage/Product_image/'.$item->image) }}" alt="">
+                            <img src="{{ asset('storage/Product_image/'.$product->image) }}" alt="">
                         </div>
                         <div class="tranding-pro-title">
-                            <h3>{{ $item->title }}</h3>
+                            <h3>{{ $product->title }}</h3>
                             <h4>Drone</h4>
                         </div>
                         <div class="tranding-pro-price">
                             <div class="price_box">
-                                <span class="current_price">${{ $item->price }}</span>
-                                <span class="old_price">${{ $item->old_price }}</span>
+                                <span class="current_price">${{ $product->price }}</span>
+                                <span class="old_price">${{ $product->old_price }}</span>
                             </div>
                         </div>
                     </a>

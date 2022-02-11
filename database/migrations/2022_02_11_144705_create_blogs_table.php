@@ -18,7 +18,8 @@ class CreateBlogsTable extends Migration
 
             $table->string('title');
             $table->string('posted_by');
-            $table->string('short_description');
+            $table->longText('short_description');
+            $table->longText('description');
             $table->string('image');
             $table->enum('trash',['0','1'])->default('0')->comment="0=not trashed,1=trashed";
 

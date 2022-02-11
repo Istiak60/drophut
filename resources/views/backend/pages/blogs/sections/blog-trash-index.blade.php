@@ -32,6 +32,7 @@
                                 <th>Title</th>
                                 <th>PostedBy</th>
                                 <th>ShortDescription</th>
+                                <th>Description</th>
                                 <th>Image</th>
                                 <th>Action</th>
                             </tr>
@@ -42,6 +43,7 @@
                                 <th>Title</th>
                                 <th>PostedBy</th>
                                 <th>ShortDescription</th>
+                                <th>Description</th>
                                 <th>Image</th>
                                 <th>Action</th>
                             </tr>
@@ -56,11 +58,13 @@
                                 <td>{{ $item->title }}</td>
                                 <td>{{ $item->posted_by }}</td>
                                 <td>{{ $item->short_description }}</td>
-                                <td><img src=" {{ asset('storage/Blog_image/'.$item->image) }}" style="height:50px;width:60px"></td>
+                                <td>{{ $item->description }}</td>
+                                <td><img src=" {{ asset('storage/Blog_image/'.$item->image) }}"
+                                        style="height:50px;width:60px"></td>
                                 <td>
                                     <form action="{{ route('admin.blogs.destroy',$item->id) }}" method="POST">
                                         <a class="btn btn-success"
-                                        href="{{ route('admin.blogs.restore',$item->id) }}">Restore</a>
+                                            href="{{ route('admin.blogs.restore',$item->id) }}">Restore</a>
 
                                         @csrf
                                         @method('DELETE')

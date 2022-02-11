@@ -6,10 +6,10 @@
                 <div class="pagination">
                     <ul>
                         <li class="current">1</li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li class="next"><a href="#">next</a></li>
-                        <li><a href="#"><i class="fa fa-angle-right"></i></a></li>
+                        <li><a href="{{route('blog')}}">2</a></li>
+                        <li><a href="{{route('blog')}}">3</a></li>
+                        <li class="next"><a href="{{route('blog')}}">next</a></li>
+                        <li><a href="{{route('blog')}}"><i class="fa fa-angle-right"></i></a></li>
                     </ul>
                 </div>
             </div>
