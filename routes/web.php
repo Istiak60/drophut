@@ -37,7 +37,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
-Route::group(['prefix' => 'admin', 'as' => 'admin.'], function(){
+Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'auth'], function(){
     Route::get('/', 'Backend\DashboardController@index')->name('dashboard');
     Route::resource('categories','Backend\CategoryController');
     Route::resource('products','Backend\ProductController');
@@ -56,9 +56,12 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function(){
     Route::get('blogs/trash','Backend\BlogController@trash_index')->name('blogs.trash.index');
 });
 
+Route::group(['middleware' => 'auth'], function(){
+    Route::get('categories/trash','Backend\CategoryController@trash_index')->name('categories.trash.index');
+    Route::get('products/trash','Backend\ProductController@trash_index')->name('products.trash.index');
+    Route::get('sliders/trash','Backend\SliderController@trash_index')->name('sliders.trash.index');
+    Route::get('blogs/trash','Backend\BlogController@trash_index')->name('blogs.trash.index');
+    Route::get('logout','Backend\LogoutController@perform')->name('admin.logout');
+});
 
-Route::get('categories/trash','Backend\CategoryController@trash_index')->name('categories.trash.index');
-Route::get('products/trash','Backend\ProductController@trash_index')->name('products.trash.index');
-Route::get('sliders/trash','Backend\SliderController@trash_index')->name('sliders.trash.index');
-Route::get('blogs/trash','Backend\BlogController@trash_index')->name('blogs.trash.index');
 
