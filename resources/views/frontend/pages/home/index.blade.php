@@ -48,7 +48,7 @@
                         </div>
                         <div class="tranding-pro-title">
                             <h3>{{ $product->title }}</h3>
-                            <h4>Drone</h4>
+                            <h4>{{ $product->category->title }}</h4>
                         </div>
                         <div class="tranding-pro-price">
                             <div class="price_box">
@@ -247,7 +247,7 @@
                         </div>
                         <div class="tranding-pro-title">
                             <h3>{{ $product->title }}</h3>
-                            <h4>Drone</h4>
+                            <h4>{{ $product->category->title }}</h4>
                         </div>
                         <div class="tranding-pro-price">
                             <div class="price_box">

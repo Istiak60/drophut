@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Backend;
 
 use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
@@ -34,8 +35,9 @@ class ProductController extends Controller
      */
     public function create()
     {
-        $products = Product::all();
-        return view('backend.pages.products.create',compact('products'));
+        $categories = Category::all()->where('trash','0');
+
+        return view('backend.pages.products.create',compact('categories'));
     }
 
     /**
@@ -86,7 +88,9 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        return view('backend.pages.products.edit',compact('product'));
+        $categories = Category::all()->where('trash','0');
+
+        return view('backend.pages.products.edit',compact('product','categories'));
     }
 
     /**
@@ -107,7 +111,6 @@ class ProductController extends Controller
             'image'             => 'required',
             'category_id'       => 'required'
         ]);
-        // dd($request->file('image'));
 
         $picture = $this->fileUpload($request->file('image'));
         if(empty($picture))$picture = $product->picture;
