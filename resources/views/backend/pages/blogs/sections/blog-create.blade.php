@@ -18,7 +18,7 @@
                             <div class="col-md-6 mb-3">
                                 <div class="form-floating mb-3 mb-md-0">
                                     <input class="form-control @error('title') is-invalid @enderror" id="inputTitle"
-                                        name="title" type="text" />
+                                        name="title" value="{{old('title')}}" type="text" />
                                     <label for="inputTitle">Title</label>
                                     @error('title')
                                     <div class="alert alert-danger">{{ $message }}</div>
@@ -28,7 +28,7 @@
                             <div class="col-md-6 mb-3">
                                 <div class="form-floating mb-3 mb-md-0">
                                     <input class="form-control @error('posted_by') is-invalid @enderror"
-                                        id="inputPostedBy" name="posted_by" type="text" />
+                                        id="inputPostedBy" name="posted_by" value="{{old('posted_by')}}" type="text" />
                                     <label for="inputPostedBy">Posted By</label>
                                     @error('posted_by')
                                     <div class="alert alert-danger">{{ $message }}</div>
@@ -38,7 +38,7 @@
                             <div class="col-md-6 mb-3">
                                 <div class="form-floating mb-3 mb-md-0">
                                     <input class="form-control @error('short_description') is-invalid @enderror"
-                                        id="inputShortDescription" name="short_description" type="text" />
+                                        id="inputShortDescription" name="short_description"  value="{{old('short_description')}}" type="text" />
                                     <label for="inputShortDescription">Short Description</label>
                                     @error('short_description')
                                     <div class="alert alert-danger">{{ $message }}</div>
@@ -48,7 +48,7 @@
                             <div class="col-md-6 mb-3">
                                 <div class="form-floating mb-3 mb-md-0">
                                     <input class="form-control @error('description') is-invalid @enderror"
-                                        id="inputDescription" name="description" type="text" />
+                                        id="inputDescription" name="description" value="{{old('description')}}" type="text" />
                                     <label for="inputDescription">Description</label>
                                     @error('description')
                                     <div class="alert alert-danger">{{ $message }}</div>
@@ -57,7 +57,7 @@
                             </div>
                             <div class="col-md-6 mb-3">
                                 <div class="form-floating mb-3 mb-md-0">
-                                    <input class="form-control" id="inputImage" name="image" type="file" />
+                                    <input class="form-control" id="inputImage" name="image"  type="file" />
                                     <label for="inputImage">Image</label>
                                     @error('image')
                                     <div class="alert alert-danger">{{ $message }}</div>
