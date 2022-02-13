@@ -27,6 +27,7 @@ Route::get('blog','Frontend\BlogController@index')->name('blog');
 Route::get('cart','Frontend\CartController@index')->name('cart');
 Route::get('checkout','Frontend\CheckoutController@index')->name('checkout');
 Route::get('contact','Frontend\ContactController@index')->name('contact');
+Route::post('contact/store','Frontend\ContactController@store')->name('contact.store');
 Route::get('faq','Frontend\FAQController@index')->name('faq');
 Route::get('tracking','Frontend\TrackingController@index')->name('tracking');
 Route::get('privacy-policy','Frontend\PrivacypolicyController@index')->name('privacy-policy');
@@ -63,5 +64,4 @@ Route::group(['middleware' => 'auth'], function(){
     Route::get('blogs/trash','Backend\BlogController@trash_index')->name('blogs.trash.index');
     Route::get('logout','Backend\LogoutController@perform')->name('admin.logout');
 });
-
 
