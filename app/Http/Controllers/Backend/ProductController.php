@@ -50,8 +50,8 @@ class ProductController extends Controller
     {
         $data = $request->validate([
             'title'             => 'required',
-            'price'             => 'required',
-            'old_price'         => 'required',
+            'price'             => 'required|numeric',
+            'old_price'         => 'required|numeric',
             'short_description' => 'required',
             'description'       => 'required',
             'image'             => 'required|mimes:jpg,jpeg,png',
@@ -104,8 +104,8 @@ class ProductController extends Controller
     {
         $data = $request->validate([
             'title'             => 'required',
-            'price'             => 'required',
-            'old_price'         => 'required',
+            'price'             => 'required|numeric',
+            'old_price'         => 'required|numeric',
             'short_description' => 'required',
             'description'       => 'required',
             'image'             => 'required',
