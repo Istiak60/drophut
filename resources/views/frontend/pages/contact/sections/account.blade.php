@@ -14,29 +14,40 @@
                         </div>
                         <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12">
                             <div class="account-content">
-                                <form action="#">
+                                <form action="{{ route('contact.store') }}" method="POST">
+                                    @csrf
                                     <div class="row">
                                         <div class="col-lg-6">
                                             <div class="single-acc-field">
                                                 <label for="name">Name</label>
-                                                <input type="text" placeholder="Name" id="name">
+                                                <input class="form-control @error('name') is-invalid @enderror" type="text"
+                                                    placeholder="name" value="{{old('name')}}" name="name" id="name">
+                                                @error('name')
+                                                <div class="alert alert-danger">{{ $message }}</div>
+                                                @enderror
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="single-acc-field">
                                                 <label for="email">Email</label>
-                                                <input type="email" placeholder="Email" id="email">
+                                                <input class="form-control @error('email') is-invalid @enderror" type="email"
+                                                    value="{{old('email')}}" placeholder="email" name="email" id="email">
+                                                @error('email')
+                                                <div class="alert alert-danger">{{ $message }}</div>
+                                                @enderror
                                             </div>
                                         </div>
                                         <div class="col-lg-12">
                                             <div class="single-acc-field">
                                                 <label for="msg">Message</label>
-                                                <textarea name="msg" id="msg" rows="4"></textarea>
+                                                <textarea class="form-control @error('msg') is-invalid @enderror" name="msg"
+                                                    id="msg" name="msg" value="{{old('msg')}}" rows="4"></textarea>
+                                                @error('msg')
+                                                <div class="alert alert-danger">{{ $message }}</div>
+                                                @enderror
                                             </div>
                                         </div>
                                     </div>
-
-
                                     <div class="single-acc-field boxes">
                                         <input type="checkbox" id="checkbox">
                                         <label for="checkbox">Remember me</label>
