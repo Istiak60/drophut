@@ -18,6 +18,7 @@ class CreateContactsTable extends Migration
             $table->string('name');
             $table->string('email');
             $table->string('msg');
+            $table->enum('trash',['0','1'])->default('0')->comment="0=not trashed,1=trashed";
 
             $table->timestamps();
         });
