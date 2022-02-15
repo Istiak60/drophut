@@ -38,6 +38,10 @@
                                 <td>{{ $product->old_price}}</td>
                             </tr>
                             <tr>
+                                <th>Quantity</th>
+                                <td>{{ $product->quantity}}</td>
+                            </tr>
+                            <tr>
                                 <th>Short_description</th>
                                 <td>{{ $product->short_description}}</td>
                             </tr>

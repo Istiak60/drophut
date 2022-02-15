@@ -18,6 +18,7 @@ class CreateProductsTable extends Migration
             $table->string('title');
             $table->float('price');
             $table->float('old_price');
+            $table->integer('quantity');
             $table->longText('short_description');
             $table->longText('description');
             $table->string('image');

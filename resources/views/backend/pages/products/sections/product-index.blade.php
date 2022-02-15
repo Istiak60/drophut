@@ -38,6 +38,7 @@
                                 <th>Title</th>
                                 <th>Price</th>
                                 <th>Old Price</th>
+                                <th>Quantity</th>
                                 <th>Short Description</th>
                                 <th>Description</th>
                                 <th>Category</th>
@@ -51,6 +52,7 @@
                                 <th>Title</th>
                                 <th>Price</th>
                                 <th>Old Price</th>
+                                <th>Quantity</th>
                                 <th>Short Description</th>
                                 <th>Description</th>
                                 <th>Category</th>
@@ -68,6 +70,7 @@
                                 <td>{{ $item->title }}</td>
                                 <td>{{ $item->price }}</td>
                                 <td>{{ $item->old_price }}</td>
+                                <td>{{ $item->quantity }}</td>
                                 <td>{{ $item->short_description}}</td>
                                 <td>{{ $item->description }}</td>
                                 <td>{{ $item->category->title }}</td>

@@ -48,6 +48,17 @@
                                     @enderror
                                 </div>
                             </div>
+                              <div class="col-md-6 mb-3">
+                                <div class="form-floating mb-3 mb-md-0">
+                                    <input class="form-control @error('quantity') is-invalid @enderror"
+                                        id="inputQuantity" name="quantity" value="{{ $product->quantity }}"
+                                        type="number" />
+                                    <label for="inputQuantity">Quantity</label>
+                                    @error('quantity')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                            </div>
                             <div class="col-md-6 mb-3">
                                 <div class="form-floating mb-3 mb-md-0">
                                     <input class="form-control @error('short_description') is-invalid @enderror"
