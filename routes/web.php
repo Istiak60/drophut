@@ -44,6 +44,9 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'auth'], fu
     Route::resource('products','Backend\ProductController');
     Route::resource('sliders','Backend\SliderController');
     Route::resource('blogs','Backend\BlogController');
+    Route::resource('feedbacks','Backend\FeedbacksController');
+    Route::get('feedbacks/trash/{id}', 'Backend\FeedbacksController@trash')->name('feedbacks.trash');
+    Route::get('feedbacks/restore/{id}', 'Backend\FeedbacksController@restore')->name('feedbacks.restore');
     Route::get('categories/trash/{id}', 'Backend\CategoryController@trash')->name('categories.trash');
     Route::get('categories/restore/{id}', 'Backend\CategoryController@restore')->name('categories.restore');
     Route::get('products/trash/{id}', 'Backend\ProductController@trash')->name('products.trash');
@@ -62,6 +65,7 @@ Route::group(['middleware' => 'auth'], function(){
     Route::get('products/trash','Backend\ProductController@trash_index')->name('products.trash.index');
     Route::get('sliders/trash','Backend\SliderController@trash_index')->name('sliders.trash.index');
     Route::get('blogs/trash','Backend\BlogController@trash_index')->name('blogs.trash.index');
+    Route::get('feedbacks/trash','Backend\FeedbacksController@trash_index')->name('feedbacks.trash.index');
     Route::get('logout','Backend\LogoutController@perform')->name('admin.logout');
 });
 

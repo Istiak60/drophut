@@ -10,10 +10,13 @@ use Illuminate\Http\Request;
 class ContactController extends Controller
 {
     public function index(){
+        $feedbacks =  Contact::get();
+        
+
         $data = [
             'title' => 'Contact'
         ];
-        return view('frontend.pages.contact.contact', $data);
+        return view('frontend.pages.contact.contact', $data,compact('feedbacks'));
     }
 
     public function store(Request $request)
