@@ -31,6 +31,9 @@ Route::post('contact/store','Frontend\ContactController@store')->name('contact.s
 Route::get('faq','Frontend\FAQController@index')->name('faq');
 Route::get('tracking','Frontend\TrackingController@index')->name('tracking');
 Route::get('privacy-policy','Frontend\PrivacypolicyController@index')->name('privacy-policy');
+// Route::resource('add-to-cart','Frontend\AddToCartController');
+Route::resource('add-cart','Frontend\AddToCartController@index');
+
 
 
 

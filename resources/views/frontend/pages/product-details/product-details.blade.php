@@ -26,8 +26,11 @@
                 </div>
                 <div class="col-lg-6 col-md-6">
                     <div class="product_d_right">
-                       <form action="#">
+                       <form action="{{route('add-cart.store')}} "method="post">
                             <h1>{{ $product->title }}</h1>
+                                  <input id="" name="product_id" type="hidden" value="{{ $product->id }}">
+                              
+                                  
                             <div class=" product_ratting">
                                 <ul>
                                     <li><a href="#"><i class="fa fa-star"></i></a></li>
@@ -67,7 +70,7 @@
                             </div>
                             <div class="product_variant quantity">
                                 <label>quantity</label>
-                                <input min="1" max="100" value="1" type="number">
+                                <input name="qty"  min="1" max="100" value="1" type="number">
                                 <button class="button" type="submit">add to cart</button>  
                                 
                             </div>
